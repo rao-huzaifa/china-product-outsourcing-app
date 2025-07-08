@@ -1,5 +1,5 @@
-import BrandSlider1 from '@/components/slider/BrandSlider1'
-import CounterUp from "@/components/elements/CounterUp"
+import BrandSlider1 from "../../slider/BrandSlider1"
+import CounterUp from "../../elements/CounterUp"
 export default function Brand() {
     return (
         <>

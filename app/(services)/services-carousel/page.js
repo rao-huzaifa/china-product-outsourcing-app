@@ -1,5 +1,5 @@
-import Layout from "@/components/layout/Layout"
-import ServiceSlider from "@/components/slider/ServiceSlider"
+import Layout from "../../../components/layout/Layout"
+import ServiceSlider from "../../../components/slider/ServiceSlider"
 import Link from "next/link"
 export default function Home() {
 

@@ -1,14 +1,14 @@
 'use client'
 import React, { useState } from 'react';
-import Layout from "@/components/layout/Layout"
-import Header1 from '@/components/layout/header/Header1';
-import Footer1 from '@/components/layout/footer/Footer1';
+import Layout from "../../components/layout/Layout"
+import Header1 from '../../components/layout/header/Header1';
+import Footer1 from '../../components/layout/footer/Footer1';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Calculator, Package, Truck, MapPin, Weight, Ruler, Box, DollarSign, Clock, User, Mail
 } from 'lucide-react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Cta from '@/components/sections/home1/Cta';
+import Cta from '../../components/sections/home1/Cta';
 
 const destinations = [
   'United States', 'United Kingdom', 'Canada', 'Australia', 'Germany', 'France', 'Japan', 'Singapore', 'UAE', 'Netherlands', 'Sweden', 'Switzerland'

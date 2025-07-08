@@ -1,11 +1,11 @@
 'use client'
-import About from '@/components/sections/home1/About';
-import WhyChoose from '@/components/sections/home1/WhyChoose';
-import Testimonial from '@/components/sections/home1/Testimonial';
-import Cta from '@/components/sections/home1/Cta';
+import About from '../../components/sections/home1/About';
+import WhyChoose from '../../components/sections/home1/WhyChoose';
+import Testimonial from '../../components/sections/home1/Testimonial';
+import Cta from '../../components/sections/home1/Cta';
 import { useState } from 'react';
-import Layout from '@/components/layout/Layout';
-import '@/styles/about-unified.css';
+import Layout from '../../components/layout/Layout';
+import '../../styles/about-unified.css';
 
 function SectionWrapper({ children, className = '', bg = '', divider = false, style = {} }) {
   return (

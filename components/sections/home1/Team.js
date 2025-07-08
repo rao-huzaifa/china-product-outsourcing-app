@@ -1,5 +1,5 @@
 import Link from "next/link"
-import TeamSlider from "@/components/slider/TeamSlider"
+import TeamSlider from "../../slider/TeamSlider"
 export default function Team() {
     return (
         <>

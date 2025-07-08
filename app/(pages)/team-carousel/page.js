@@ -1,5 +1,5 @@
-import Layout from "@/components/layout/Layout"
-import TeamSlider from "@/components/slider/TeamSlider"
+import Layout from "../../../components/layout/Layout"
+import TeamSlider from "../../../components/slider/TeamSlider"
 import Link from "next/link"
 export default function Home() {
 

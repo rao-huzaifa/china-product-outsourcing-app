@@ -1,4 +1,4 @@
-import TestimonialSlider2 from '@/components/slider/TestimonialSlider2'
+import TestimonialSlider2 from '../../slider/TestimonialSlider2'
 export default function Testimonial() {
     return (
       <>

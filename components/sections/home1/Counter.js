@@ -1,7 +1,7 @@
 'use client'
 import ModalVideo from 'react-modal-video';
 import { useState } from 'react'
-import CounterUp from "@/components/elements/CounterUp"
+import CounterUp from "../../elements/CounterUp"
 export default function Counter() {
     const [isOpen, setOpen] = useState(false);
     return (
