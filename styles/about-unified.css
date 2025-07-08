@@ -1,0 +1,57 @@
+.section-wrapper {
+  position: relative;
+  background: #f8f9fb;
+}
+.section-divider {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 32px;
+  background: linear-gradient(90deg, #0d6efd 0%, #00c6ff 100%);
+  opacity: 0.08;
+  z-index: 1;
+}
+.unified-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Card and grid improvements */
+.industry-card, .client-approach-card, .partnership-card, .approach-card, .mission-card, .feature-card {
+  border-radius: 24px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: transform 0.2s, filter 0.2s;
+  cursor: pointer;
+}
+.industry-card:hover, .client-approach-card:hover, .partnership-card:hover, .approach-card:hover, .mission-card:hover, .feature-card:hover {
+  transform: scale(1.04);
+  filter: brightness(1.08);
+}
+
+/* Section title consistency */
+.section-title__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 0.5rem;
+}
+.section-title__tagline {
+  color: #00c6ff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Responsive grid spacing */
+@media (max-width: 767px) {
+  .unified-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .section-title__title {
+    font-size: 1.4rem;
+  }
+} 
