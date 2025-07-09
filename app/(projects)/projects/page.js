@@ -1,192 +1,172 @@
 
 import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
-export default function Home() {
+import { createClient } from '@sanity/client'
+import './category-nav.css'
 
-    return (
-        <>
-            <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Projects">
-                <div>
-               
-                    {/*Project Two Start*/}
-                    <section className="project-one">
-                        <div className="container">
-                        <div className="row">
-                            {/*Project Two Single Start*/}
-                            <div
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                            data-wow-delay="100ms"
-                            >
-                            <div className="project-two__single">
-                                <div className="project-two__content-box">
-                                <div className="section-title text-left">
-                                    <div className="section-title__tagline-box">
-                                    <span className="section-title__tagline">latest project</span>
-                                    </div>
-                                    <h2 className="section-title__title">
-                                    Seamless logistics for your logo
-                                    </h2>
-                                </div>
-                                <div className="project-two__btn-box">
-                                    <Link
-                                    href="/project-details"
-                                    className="thm-btn project-two__btn"
-                                    >
-                                    more project
-                                    <span />
-                                    </Link>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            {/*Project Two Single End*/}
-                            {/*Project Two Single Start*/}
-                            <div
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                            data-wow-delay="300ms"
-                            >
-                            <div className="project-two__single">
-                                <div className="project-two__img">
-                                <img src="assets/images/project/project-2-1.jpg" alt="" />
-                                <div className="project-two__content">
-                                    <p className="project-two__sub-title">Express Logistics</p>
-                                    <h3 className="project-two__title">
-                                    <Link href="/project-details">
-                                        Delivering success through logistics
-                                    </Link>
-                                    </h3>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            {/*Project Two Single End*/}
-                            {/*Project Two Single Start*/}
-                            <div
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                            data-wow-delay="500ms"
-                            >
-                            <div className="project-two__single">
-                                <div className="project-two__img">
-                                <img src="assets/images/project/project-2-2.jpg" alt="" />
-                                <div className="project-two__content">
-                                    <p className="project-two__sub-title">Express Logistics</p>
-                                    <h3 className="project-two__title">
-                                    <Link href="/project-details">
-                                        Delivering success through logistics
-                                    </Link>
-                                    </h3>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            {/*Project Two Single End*/}
-                            {/*Project Two Single Start*/}
-                            <div
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                            data-wow-delay="700ms"
-                            >
-                            <div className="project-two__single">
-                                <div className="project-two__img">
-                                <img src="assets/images/project/project-2-3.jpg" alt="" />
-                                <div className="project-two__content">
-                                    <p className="project-two__sub-title">Express Logistics</p>
-                                    <h3 className="project-two__title">
-                                    <Link href="/project-details">
-                                        Delivering success through logistics
-                                    </Link>
-                                    </h3>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            {/*Project Two Single End*/}
-                            {/*Project Two Single Start*/}
-                            <div
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                            data-wow-delay="900ms"
-                            >
-                            <div className="project-two__single">
-                                <div className="project-two__img">
-                                <img src="assets/images/project/project-2-4.jpg" alt="" />
-                                <div className="project-two__content">
-                                    <p className="project-two__sub-title">Express Logistics</p>
-                                    <h3 className="project-two__title">
-                                    <Link href="/project-details">
-                                        Delivering success through logistics
-                                    </Link>
-                                    </h3>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            {/*Project Two Single End*/}
-                            {/*Project Two Single Start*/}
-                            <div
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                            data-wow-delay="1100ms"
-                            >
-                            <div className="project-two__single">
-                                <div className="project-two__img">
-                                <img src="assets/images/project/project-2-5.jpg" alt="" />
-                                <div className="project-two__content">
-                                    <p className="project-two__sub-title">Express Logistics</p>
-                                    <h3 className="project-two__title">
-                                    <Link href="/project-details">
-                                        Delivering success through logistics
-                                    </Link>
-                                    </h3>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            {/*Project Two Single End*/}
-                        </div>
-                        </div>
-                    </section>
-                    {/*Project Two End*/}
+const sanity = createClient({
+  projectId: 'hjoc1p23',
+  dataset: 'production',
+  apiVersion: '2024-07-08',
+  useCdn: true,
+})
 
-                    {/*CTA One Start*/}
-                    <section className="cta-one cta-two">
-                        <div className="container">
-                        <div className="cta-one__inner">
-                            <div
-                            className="cta-one__bg-img"
-                            style={{
-                                backgroundImage: "url(assets/images/resources/cta-one-bg-img.jpg)"
-                            }}
-                            />
-                            <div className="cta-one__content-box">
-                            <div className="cta-one__icon">
-                                <span className="icon-call" />
-                                <div className="cta-one__shape-1">
-                                <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
-                                </div>
-                            </div>
-                            <h3 className="cta-one__title">
-                                Need any help?
-                                <br /> contact us!
-                            </h3>
-                            <div className="cta-one__contact-box">
-                                <div className="icon">
-                                <span className="icon-phone" />
-                                </div>
-                                <div className="content">
-                                <p>Need help?</p>
-                                <h3>
-                                    <Link href="tel:3075550133">(307) 555-0133</Link>
-                                </h3>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </section>
-                    {/*CTA One End*/}
+const projectsQuery = `
+  *[_type == "project"]{
+    title,
+    slug,
+    category->{title, slug},
+    mainImage{asset->{url}},
+    customer,
+    startDate,
+    endDate,
+    rating
+  } | order(_createdAt desc)
+`
 
+// Fetch all categories, even if they have no projects
+const categoriesQuery = `
+  *[_type == "projectCategory"] | order(title asc){
+    title,
+    slug
+  }
+`
 
+export default async function Home() {
+  const [projects, categories] = await Promise.all([
+    sanity.fetch(projectsQuery),
+    sanity.fetch(categoriesQuery)
+  ])
+
+  // On the main projects page, 'All' is always active
+  const activeCategory = null;
+
+  // Color palette for categories (looped if more categories than colors)
+  const colorPalette = [
+    '#2563eb', // blue
+    '#eab308', // yellow
+    '#10b981', // green
+    '#f59e42', // orange
+    '#a21caf', // purple
+    '#0ea5e9', // sky
+    '#f43f5e', // rose
+    '#14b8a6', // teal
+    '#f97316', // amber
+    '#6366f1', // indigo
+  ];
+
+  return (
+    <>
+      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Projects">
+        <div>
+          {/* Category Navigation */}
+          <section style={{ background: '#fff', padding: '40px 0 24px 0', marginBottom: 32 }}>
+            <div className="category-nav-container" style={{ flexDirection: 'column', alignItems: 'center', display: 'flex' }}>
+              <h2 style={{ margin: 0, fontWeight: 800, fontSize: 28, marginBottom: 24, textAlign: 'center', letterSpacing: '-0.5px', color: '#18181b' }}>
+                Browse by Category
+              </h2>
+              <nav className="category-nav" aria-label="Project Categories" role="navigation">
+                <Link href="/projects" className={activeCategory === null ? "active" : ""} style={{ background: activeCategory === null ? '#e11d48' : '#fff', color: activeCategory === null ? '#fff' : '#222' }}>
+                  <strong>All</strong>
+                </Link>
+                {categories.map((cat, idx) => {
+                  const color = colorPalette[idx % colorPalette.length];
+                  const isActive = activeCategory === cat.slug.current;
+                  return (
+                    <Link
+                      key={cat.slug.current}
+                      href={`/projects/${cat.slug.current}`}
+                      className={isActive ? "active" : ""}
+                      style={{
+                        background: isActive ? color : '#fff',
+                        color: isActive ? '#fff' : color,
+                        border: `1.5px solid ${color}`,
+                        fontWeight: 500,
+                        transition: 'background 0.25s, color 0.25s, transform 0.18s',
+                      }}
+                      aria-label={`Category: ${cat.title}`}
+                    >
+                      {cat.title}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+          </section>
+          {/*Project Two Start*/}
+          <section className="project-one">
+            <div className="container">
+              <div className="row">
+                {/* Dynamically render project cards from Sanity */}
+                {projects.map((project, idx) => (
+                  <div
+                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                    data-wow-delay={`${100 + idx * 200}ms`}
+                    key={project.slug?.current || idx}
+                  >
+                    <div className="project-two__single">
+                      <div className="project-two__img">
+                        <img
+                          src={project.mainImage?.asset?.url || "/assets/images/project/project-2-1.jpg"}
+                          alt={project.title}
+                        />
+                        <div className="project-two__content">
+                          <p className="project-two__sub-title">{project.category?.title}</p>
+                          <h3 className="project-two__title">
+                            <Link href={`/projects/${project.category?.slug?.current}/${project.slug?.current}`}>
+                              {project.title}
+                            </Link>
+                          </h3>
+                          {/* Optionally add more project info here if desired */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+          {/*Project Two End*/}
+
+          {/*CTA One Start*/}
+          <section className="cta-one cta-two">
+            <div className="container">
+              <div className="cta-one__inner">
+                <div
+                  className="cta-one__bg-img"
+                  style={{
+                    backgroundImage: "url(assets/images/resources/cta-one-bg-img.jpg)"
+                  }}
+                />
+                <div className="cta-one__content-box">
+                  <div className="cta-one__icon">
+                    <span className="icon-call" />
+                    <div className="cta-one__shape-1">
+                      <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
+                    </div>
+                  </div>
+                  <h3 className="cta-one__title">
+                    Need any help?
+                    <br /> contact us!
+                  </h3>
+                  <div className="cta-one__contact-box">
+                    <div className="icon">
+                      <span className="icon-phone" />
+                    </div>
+                    <div className="content">
+                      <p>Need help?</p>
+                      <h3>
+                        <Link href="tel:3075550133">(307) 555-0133</Link>
+                      </h3>
+                    </div>
+                  </div>
                 </div>
-
-            </Layout>
-        </>
-    )
+              </div>
+            </div>
+          </section>
+          {/*CTA One End*/}
+        </div>
+      </Layout>
+    </>
+  )
 }

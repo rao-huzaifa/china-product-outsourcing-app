@@ -1,13 +1,24 @@
 'use client'
 import Link from "next/link";
 import { useState } from "react";
+import { createClient } from '@sanity/client'
 
-const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
+const MobileMenu = async ({ isSidebar, handleMobileMenu, handleSidebar }) => {
   const [isActive, setIsActive] = useState({
     status: false,
     key: "",
     subMenuKey: "",
   });
+
+  // Sanity client
+  const sanity = createClient({
+    projectId: 'hjoc1p23',
+    dataset: 'production',
+    apiVersion: '2024-07-08',
+    useCdn: true,
+  })
+  // Fetch categories
+  const categories = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
 
   const handleToggle = (key, subMenuKey = "") => {
     if (isActive.key === key && isActive.subMenuKey === subMenuKey) {
@@ -89,27 +100,31 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                                 <span className="fa fa-angle-right" />
                             </div>
                         </li>
-                            <li className={isActive.key == 5 ? "dropdown current" : "dropdown"}>
-                                <Link href="#" onClick={handleMobileMenu}>Projects</Link>
-                                <ul style={{ display: `${isActive.key == 5 ? "block" : "none"}` }}>
-                                    <li><Link href="/projects" onClick={handleMobileMenu}>Projects</Link></li>
-                                    <li><Link href="/project-details" onClick={handleMobileMenu}>Project Details</Link></li>
-                                </ul>
-                                <div className={isActive.key == 5 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(5)}>
-                                    <span className="fa fa-angle-right" />
-                                </div>
-                            </li>
-                            <li className={isActive.key == 6 ? "dropdown current" : "dropdown"}>
-                                <Link href="#" onClick={handleMobileMenu}>Blog</Link>
-                                <ul style={{ display: `${isActive.key == 6 ? "block" : "none"}` }}>
-                                    <li><Link href="/blog" onClick={handleMobileMenu}>Blog</Link></li>
-                                    <li><Link href="/blog-details" onClick={handleMobileMenu}>Blog Details</Link></li>
-                                </ul>
-                                <div className={isActive.key == 6 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(6)}>
-                                    <span className="fa fa-angle-right" />
-                                </div>
-                            </li>
-                            <li><Link href="/contact" onClick={handleMobileMenu}>Contact</Link></li>
+                        <li className={isActive.key == 5 ? "dropdown current" : "dropdown"}>
+                            <Link href="/projects" onClick={handleMobileMenu}>Projects</Link>
+                            <ul style={{ display: `${isActive.key == 5 ? "block" : "none"}` }}>
+                                <li><Link href="/projects" onClick={handleMobileMenu}>All Projects</Link></li>
+                                {categories.map(cat => (
+                                  <li key={cat.slug.current}>
+                                    <Link href={`/projects/${cat.slug.current}`} onClick={handleMobileMenu}>{cat.title}</Link>
+                                  </li>
+                                ))}
+                            </ul>
+                            <div className={isActive.key == 5 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(5)}>
+                                <span className="fa fa-angle-right" />
+                            </div>
+                        </li>
+                        <li className={isActive.key == 6 ? "dropdown current" : "dropdown"}>
+                            <Link href="#" onClick={handleMobileMenu}>Blog</Link>
+                            <ul style={{ display: `${isActive.key == 6 ? "block" : "none"}` }}>
+                                <li><Link href="/blog" onClick={handleMobileMenu}>Blog</Link></li>
+                                <li><Link href="/blog-details" onClick={handleMobileMenu}>Blog Details</Link></li>
+                            </ul>
+                            <div className={isActive.key == 6 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(6)}>
+                                <span className="fa fa-angle-right" />
+                            </div>
+                        </li>
+                        <li><Link href="/contact" onClick={handleMobileMenu}>Contact</Link></li>
                         </ul>
                     </div>
                     <ul className="mobile-nav__contact list-unstyled">

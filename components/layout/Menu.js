@@ -1,8 +1,16 @@
 import Link from "next/link"
-// import { useRouter } from "next/router"
+import { createClient } from '@sanity/client'
 
-export default function Menu() {
-    // const router = useRouter()
+export default async function Menu() {
+    // Sanity client
+    const sanity = createClient({
+        projectId: 'hjoc1p23',
+        dataset: 'production',
+        apiVersion: '2024-07-08',
+        useCdn: true,
+    })
+    // Fetch categories
+    const categories = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
 
     return (
         <>
@@ -36,14 +44,16 @@ export default function Menu() {
                 <Link href="/calculator">Calculator</Link>
             </li>
             <li className="dropdown">
-                <Link href="#">Projects</Link>
+                <Link href="/projects">Projects</Link>
                 <ul>
-                <li>
-                    <Link href="/projects">Projects</Link>
-                </li>
-                <li>
-                    <Link href="/project-details">Project Details</Link>
-                </li>
+                    <li>
+                        <Link href="/projects">All Projects</Link>
+                    </li>
+                    {categories.map(cat => (
+                        <li key={cat.slug.current}>
+                            <Link href={`/projects/${cat.slug.current}`}>{cat.title}</Link>
+                        </li>
+                    ))}
                 </ul>
             </li>
             <li className="dropdown">

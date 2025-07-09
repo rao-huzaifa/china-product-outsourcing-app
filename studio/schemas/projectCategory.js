@@ -3,9 +3,9 @@ export default {
   title: 'Project Category',
   type: 'document',
   fields: [
-    { name: 'title', title: 'Title', type: 'string' },
-    { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title', maxLength: 96 } },
+    { name: 'title', title: 'Title', type: 'string', validation: Rule => Rule.required() },
+    { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title', maxLength: 96 }, validation: Rule => Rule.required() },
     { name: 'description', title: 'Description', type: 'text' },
-    { name: 'image', title: 'Image', type: 'image' }
+    { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }
   ]
 } 

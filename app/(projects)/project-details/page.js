@@ -1,206 +1,168 @@
 
 import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
-export default function Home() {
+import { createClient } from '@sanity/client'
+import { PortableText } from '@portabletext/react'
 
-    return (
-        <>
-            <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Project_Details">
+const sanity = createClient({
+  projectId: 'hjoc1p23',
+  dataset: 'production',
+  apiVersion: '2024-07-08',
+  useCdn: true,
+})
 
-            <div>
-                {/*Project Details Start*/}
-                <section className="project-details">
-                    <div className="container">
-                    <div className="row">
-                        <div className="col-xl-4">
-                        <div className="project-details__left">
-                            <div className="project-details__information">
-                            <h3 className="project-details__information-title">
-                                Project Information
-                            </h3>
-                            <ul className="project-details__information-list list-unstyled">
-                                <li>
-                                <span>Category:</span>
-                                <p>Logistics</p>
-                                </li>
-                                <li>
-                                <span>Customer:</span>
-                                <p>Starline shimlasi</p>
-                                </li>
-                                <li>
-                                <span>Start date: </span>
-                                <p>1 March 2024</p>
-                                </li>
-                                <li>
-                                <span>End date:</span>
-                                <p>28 September 2025</p>
-                                </li>
-                                <li>
-                                <span>Rating:</span>
-                                <p>
-                                    <i className="icon-star" />
-                                    <i className="icon-star" />
-                                    <i className="icon-star" />
-                                    <i className="icon-star" />
-                                    <i className="icon-star last-icon" />
-                                </p>
-                                </li>
-                            </ul>
-                            <div className="project-details__social">
-                                <Link href="/blog-details">
-                                <span className="icon-instagram" />
-                                </Link>
-                                <Link href="/blog-details">
-                                <span className="icon-facebook-f" />
-                                </Link>
-                                <Link href="/blog-details">
-                                <span className="icon-Vector" />
-                                </Link>
-                                <Link href="/blog-details">
-                                <span className="icon-linkedin-in" />
-                                </Link>
-                            </div>
-                            </div>
-                            <ul className="project-details__contact-list list-unstyled">
-                            <li>
-                                <div className="icon">
-                                <span className="icon-location icon-1" />
-                                </div>
-                                <div className="content">
-                                <h3>Address</h3>
-                                <p>
-                                    Dhaka 102, 8000 sent behaibior
-                                    <br /> road 45 house of street
-                                </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="icon">
-                                <span className="icon-call icon-2" />
-                                </div>
-                                <div className="content">
-                                <h3>Lets Talk us</h3>
-                                <p>
-                                    Phone number:{" "}
-                                    <Link href="tel:32566800890">+32566 - 800 - 890</Link>
-                                </p>
-                                <p>
-                                    Fax: <Link href="tel:123458963007">1234 -58963 - 007</Link>
-                                </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="icon">
-                                <span className="icon-envolop icon-3" />
-                                </div>
-                                <div className="content">
-                                <h3>Send us email</h3>
-                                <p>
-                                    <Link href="mailto:nafiz1223@gmail.com">nafiz1223@gmail.com</Link>
-                                    <Link href="nafiz1223@gmail.com">
-                                    {" "}
-                                    fahad
-                                    <br /> demo23yourmail.com
-                                    </Link>
-                                </p>
-                                </div>
-                            </li>
-                            </ul>
-                        </div>
-                        </div>
-                        <div className="col-xl-8">
-                        <div className="project-details__right">
-                            <div className="project-details__img">
-                            <img
-                                src="assets/images/project/project-details-img-1.jpg"
-                                alt=""
-                            />
-                            </div>
-                            <h3 className="project-details__title-1">
-                            Cultivate Success with Agriculture
-                            </h3>
-                            <p className="project-details__text-1">
-                            Logistics service involves the planning, implementation, and
-                            control of the efficient and effective transportation, storage,
-                            and distribution of goods and materials Logistics service involves
-                            the planning
-                            </p>
-                            <p className="project-details__text-2">
-                            Logistics service involves the planning, implementation, and
-                            control of the efficient and effective transportation, storage,
-                            and distribution of goods and materials Logistics service involves
-                            the planning Logistics servi involves the planning,
-                            implementation, and control of the efficient and effective
-                            transportation
-                            </p>
-                            <ul className="project-details__points list-unstyled">
-                            <li>
-                                <div className="icon">
-                                <span className="icon-dabble-arrow" />
-                                </div>
-                                <p>
-                                Trust us for reliable and cost-effective logistics solutions
-                                </p>
-                            </li>
-                            <li>
-                                <div className="icon">
-                                <span className="icon-dabble-arrow" />
-                                </div>
-                                <p> Delivering your goods with precision and care.</p>
-                            </li>
-                            <li>
-                                <div className="icon">
-                                <span className="icon-dabble-arrow" />
-                                </div>
-                                <p>Your one-stop solution for logistics services.</p>
-                            </li>
-                            <li>
-                                <div className="icon">
-                                <span className="icon-dabble-arrow" />
-                                </div>
-                                <p>We make logistics easy for your business.</p>
-                            </li>
-                            <li>
-                                <div className="icon">
-                                <span className="icon-dabble-arrow" />
-                                </div>
-                                <p>Optimize your logistics with our expertise.</p>
-                            </li>
-                            </ul>
-                            <div className="project-details__img-box">
-                            <div className="row">
-                                <div className="col-xl-6">
-                                <div className="project-details__img-box-img">
-                                    <img
-                                    src="assets/images/project/project-details-img-box-img-1.jpg"
-                                    alt=""
-                                    />
-                                </div>
-                                </div>
-                                <div className="col-xl-6">
-                                <div className="project-details__img-box-img">
-                                    <img
-                                    src="assets/images/project/project-details-img-box-img-2.jpg"
-                                    alt=""
-                                    />
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <p className="project-details__text-3">
-                            Logistics service involves the planning, implementation, and
-                            control of the efficient and effective transportation, storage,
-                            and distribution of goods and materials Logistics service involves
-                            the planning
-                            </p>
-                        </div>
-                        </div>
+const projectDetailsQuery = `
+  *[_type == "project" && slug.current == $slug][0]{
+    title,
+    category->{title},
+    customer,
+    startDate,
+    endDate,
+    rating,
+    socialLinks,
+    mainImage{asset->{url}},
+    descriptionTitle,
+    description,
+    gallery[]{asset->{url}}
+  }
+`
+
+// For now, use a hardcoded slug. For dynamic routing, use params.slug
+export default async function ProjectDetailsPage() {
+  // TODO: Replace 'your-project-slug' with dynamic slug from params
+  const project = await sanity.fetch(projectDetailsQuery, { slug: 'your-project-slug' })
+
+  return (
+    <>
+      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Project_Details">
+        <div>
+          {/*Project Details Start*/}
+          <section className="project-details">
+            <div className="container">
+              <div className="row">
+                <div className="col-xl-4">
+                  <div className="project-details__left">
+                    <div className="project-details__information">
+                      <h3 className="project-details__information-title">
+                        Project Information
+                      </h3>
+                      <ul className="project-details__information-list list-unstyled">
+                        <li>
+                          <span>Category:</span>
+                          <p>{project?.category?.title}</p>
+                        </li>
+                        <li>
+                          <span>Customer:</span>
+                          <p>{project?.customer}</p>
+                        </li>
+                        <li>
+                          <span>Start date: </span>
+                          <p>{project?.startDate}</p>
+                        </li>
+                        <li>
+                          <span>End date:</span>
+                          <p>{project?.endDate}</p>
+                        </li>
+                        <li>
+                          <span>Rating:</span>
+                          <p>
+                            {[...Array(project?.rating || 0)].map((_, i) => (
+                              <i key={i} className="icon-star" />
+                            ))}
+                          </p>
+                        </li>
+                      </ul>
+                      <div className="project-details__social">
+                        {project?.socialLinks?.map(link => (
+                          <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer">
+                            <span className={`icon-${link.platform?.toLowerCase()}`} />
+                          </a>
+                        ))}
+                      </div>
                     </div>
+                    {/* Static contact info below */}
+                    <ul className="project-details__contact-list list-unstyled">
+                      <li>
+                        <div className="icon">
+                          <span className="icon-location icon-1" />
+                        </div>
+                        <div className="content">
+                          <h3>Address</h3>
+                          <p>
+                            Dhaka 102, 8000 sent behaibior
+                            <br /> road 45 house of street
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="icon">
+                          <span className="icon-call icon-2" />
+                        </div>
+                        <div className="content">
+                          <h3>Lets Talk us</h3>
+                          <p>
+                            Phone number: <Link href="tel:32566800890">+32566 - 800 - 890</Link>
+                          </p>
+                          <p>
+                            Fax: <Link href="tel:123458963007">1234 -58963 - 007</Link>
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="icon">
+                          <span className="icon-envolop icon-3" />
+                        </div>
+                        <div className="content">
+                          <h3>Send us email</h3>
+                          <p>
+                            <Link href="mailto:nafiz1223@gmail.com">nafiz1223@gmail.com</Link>
+                            <Link href="nafiz1223@gmail.com">
+                              {" "}
+                              fahad
+                              <br /> demo23yourmail.com
+                            </Link>
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="col-xl-8">
+                  <div className="project-details__right">
+                    <div className="project-details__img">
+                      <img
+                        src={project?.mainImage?.asset?.url || "assets/images/project/project-details-img-1.jpg"}
+                        alt={project?.title}
+                      />
                     </div>
-                </section>
-                {/*Project Details End*/}
+                    <h3 className="project-details__title-1">
+                      {project?.descriptionTitle}
+                    </h3>
+                    <div className="project-details__text-1">
+                      <PortableText value={project?.description} />
+                    </div>
+                    <div className="project-details__img-box">
+                      <div className="row">
+                        {project?.gallery?.slice(0, 2).map((img, i) => (
+                          <div className="col-xl-6" key={i}>
+                            <div className="project-details__img-box-img">
+                              <img
+                                src={img.asset.url}
+                                alt={`Gallery image ${i + 1}`}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
 
-               
+
                 {/*CTA One Start*/}
                 <section className="cta-one">
                     <div className="container">
@@ -238,12 +200,7 @@ export default function Home() {
                     </div>
                 </section>
                 {/*CTA One End*/}
-
-                
-            </div>
-            
-
-            </Layout>
-        </>
-    )
+      </Layout>
+    </>
+  )
 }
