@@ -459,10 +459,10 @@ export default function ShippingCalculatorPage() {
             <HeroIcon>
               <Calculator style={{ width: 56, height: 56, color: '#fff', animation: 'spin 3s linear infinite' }} />
             </HeroIcon>
-            <HeroTitle>Kedaro Shipping Calculator</HeroTitle>
+            <HeroTitle>REO Trades Shipping Calculator</HeroTitle>
             <HeroTagline>Instant Global Shipping Estimates</HeroTagline>
             <HeroDesc>
-              Calculate your shipping costs from China to anywhere in the world with OnPoint's trusted logistics expertise. Fast, transparent, and tailored for your business needs.
+              Calculate your shipping costs from China to anywhere in the world with REO Trades&apos;s trusted logistics expertise. Fast, transparent, and tailored for your business needs.
             </HeroDesc>
           </HeroSection>
           {/* Form Section - centered, wide, with sticky button on mobile */}
@@ -722,7 +722,7 @@ export default function ShippingCalculatorPage() {
           <Cta />
           {/* Footer */}
           <Footer>
-            <p>Kedaro.biz - Your trusted partner for global sourcing & shipping solutions</p>
+            <p>REO Trades.biz - Your trusted partner for global sourcing & shipping solutions</p>
           </Footer>
         </Container>
       </PageWrapper>

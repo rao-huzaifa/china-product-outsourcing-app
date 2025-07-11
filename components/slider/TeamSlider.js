@@ -2,6 +2,8 @@
 import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import { useEffect, useState } from 'react'
+import { createClient } from '@sanity/client'
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -59,185 +61,67 @@ const swiperOptions = {
     }
 }
 export default function TeamSlider() {
+    const [team, setTeam] = useState([])
+    useEffect(() => {
+        const sanity = createClient({
+            projectId: 'hjoc1p23',
+            dataset: 'production',
+            apiVersion: '2024-07-08',
+            useCdn: true,
+        })
+        sanity.fetch(`*[_type == "team"]{name, slug, position, image{asset->{url}}, social}`).then(setTeam)
+    }, [])
     return (
         <> 
         
         <Swiper {...swiperOptions} className="thm-swiper__slider swiper-container">
             <div className="swiper-wrapper">
-                {/*Team One Single Start*/}
-                <SwiperSlide className="swiper-slide">
-                <div className="team-one__single">
-                    <div className="team-one__img">
-                    <img src="assets/images/team/team-1-1.jpg" alt="" />
-                    </div>
-                    <div className="team-one__content">
-                    <h3 className="team-one__title">
-                        <Link href="/team-details">Brooklyn Simmons</Link>
-                    </h3>
-                    <p className="team-one__sub-title">Quick Cargo</p>
-                    <div className="team-one__social">
-                        <Link href="#">
-                        <span className="icon-instagram" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-linkedin-in" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-Vector" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-facebook-f" />
-                        </Link>
-                    </div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                {/*Team One Single End*/}
-                {/*Team One Single Start*/}
-                <SwiperSlide className="swiper-slide">
-                <div className="team-one__single">
-                    <div className="team-one__img">
-                    <img src="assets/images/team/team-1-2.jpg" alt="" />
-                    </div>
-                    <div className="team-one__content">
-                    <h3 className="team-one__title">
-                        <Link href="/team-details">Sakib Hasan</Link>
-                    </h3>
-                    <p className="team-one__sub-title">Speedy Trans</p>
-                    <div className="team-one__social">
-                        <Link href="#">
-                        <span className="icon-instagram" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-linkedin-in" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-Vector" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-facebook-f" />
-                        </Link>
-                    </div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                {/*Team One Single End*/}
-                {/*Team One Single Start*/}
-                <SwiperSlide className="swiper-slide">
-                <div className="team-one__single">
-                    <div className="team-one__img">
-                    <img src="assets/images/team/team-1-3.jpg" alt="" />
-                    </div>
-                    <div className="team-one__content">
-                    <h3 className="team-one__title">
-                        <Link href="/team-details">Fahda Hossain</Link>
-                    </h3>
-                    <p className="team-one__sub-title">Efficient Transport</p>
-                    <div className="team-one__social">
-                        <Link href="#">
-                        <span className="icon-instagram" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-linkedin-in" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-Vector" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-facebook-f" />
-                        </Link>
-                    </div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                {/*Team One Single End*/}
-                {/*Team One Single Start*/}
-                <SwiperSlide className="swiper-slide">
-                <div className="team-one__single">
-                    <div className="team-one__img">
-                    <img src="assets/images/team/team-1-1.jpg" alt="" />
-                    </div>
-                    <div className="team-one__content">
-                    <h3 className="team-one__title">
-                        <Link href="/team-details">Brooklyn Simmons</Link>
-                    </h3>
-                    <p className="team-one__sub-title">Quick Cargo</p>
-                    <div className="team-one__social">
-                        <Link href="#">
-                        <span className="icon-instagram" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-linkedin-in" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-Vector" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-facebook-f" />
-                        </Link>
-                    </div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                {/*Team One Single End*/}
-                {/*Team One Single Start*/}
-                <SwiperSlide className="swiper-slide">
-                <div className="team-one__single">
-                    <div className="team-one__img">
-                    <img src="assets/images/team/team-1-2.jpg" alt="" />
-                    </div>
-                    <div className="team-one__content">
-                    <h3 className="team-one__title">
-                        <Link href="/team-details">Sakib Hasan</Link>
-                    </h3>
-                    <p className="team-one__sub-title">Speedy Trans</p>
-                    <div className="team-one__social">
-                        <Link href="#">
-                        <span className="icon-instagram" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-linkedin-in" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-Vector" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-facebook-f" />
-                        </Link>
-                    </div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                {/*Team One Single End*/}
-                {/*Team One Single Start*/}
-                <SwiperSlide className="swiper-slide">
-                <div className="team-one__single">
-                    <div className="team-one__img">
-                    <img src="assets/images/team/team-1-3.jpg" alt="" />
-                    </div>
-                    <div className="team-one__content">
-                    <h3 className="team-one__title">
-                        <Link href="/team-details">Fahda Hossain</Link>
-                    </h3>
-                    <p className="team-one__sub-title">Efficient Transport</p>
-                    <div className="team-one__social">
-                        <Link href="#">
-                        <span className="icon-instagram" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-linkedin-in" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-Vector" />
-                        </Link>
-                        <Link href="#">
-                        <span className="icon-facebook-f" />
-                        </Link>
-                    </div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                {/*Team One Single End*/}
+                {team.length > 0 ? team.map((member, idx) => (
+                    <SwiperSlide className="swiper-slide" key={member.slug?.current || idx}>
+                        <div className="team-one__single">
+                            <div className="team-one__img">
+                                {member.image && member.image.asset ? (
+                                    <img src={member.image.asset.url} alt={member.name} />
+                                ) : (
+                                    <div style={{width:150, height:150, borderRadius:'50%', background:'#e5e5e5', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20}}>150X150</div>
+                                )}
+                            </div>
+                            <div className="team-one__content">
+                                <h3 className="team-one__title">
+                                    <Link href={`/team/${member.slug?.current || ''}`}>{member.name}</Link>
+                                </h3>
+                                <p className="team-one__sub-title">{member.position}</p>
+                                <div className="team-one__social">
+                                    {member.social?.instagram && <Link href={member.social.instagram} target="_blank"><span className="icon-instagram" /></Link>}
+                                    {member.social?.linkedin && <Link href={member.social.linkedin} target="_blank"><span className="icon-linkedin-in" /></Link>}
+                                    {member.social?.twitter && <Link href={member.social.twitter} target="_blank"><span className="icon-Vector" /></Link>}
+                                    {member.social?.facebook && <Link href={member.social.facebook} target="_blank"><span className="icon-facebook-f" /></Link>}
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                )) : (
+                    // fallback to static slides if no data
+                    <>
+                    <SwiperSlide className="swiper-slide">
+                        <div className="team-one__single">
+                            <div className="team-one__img">
+                                <div style={{width:150, height:150, borderRadius:'50%', background:'#e5e5e5', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20}}>150X150</div>
+                            </div>
+                            <div className="team-one__content">
+                                <h3 className="team-one__title"><Link href="#">Name</Link></h3>
+                                <p className="team-one__sub-title">Position</p>
+                                <div className="team-one__social">
+                                    <Link href="#"><span className="icon-instagram" /></Link>
+                                    <Link href="#"><span className="icon-linkedin-in" /></Link>
+                                    <Link href="#"><span className="icon-Vector" /></Link>
+                                    <Link href="#"><span className="icon-facebook-f" /></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    </>
+                )}
             </div>
         </Swiper>
       </>

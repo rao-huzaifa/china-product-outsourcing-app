@@ -12,14 +12,14 @@ export default function About() {
                     <div className="about-one__left">
                         <div className="section-title text-left">
                         <div className="section-title__tagline-box">
-                            <span className="section-title__tagline">About OnPoint</span>
+                            <span className="section-title__tagline">About REO Trades</span>
                         </div>
                         <h2 className="section-title__title">
                             Seamless Sourcing & Supply Chain Solutions from China
                         </h2>
                         </div>
                         <p className="about-one__text">
-                            OnPoint manages every step of your product’s journey from China, ensuring quality, efficiency, and peace of mind. Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
+                            REO Trades manages every step of your product’s journey from China, ensuring quality, efficiency, and peace of mind. Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>
                         <div className="about-one__list-box">
                         <div className="about-one__shape-1">

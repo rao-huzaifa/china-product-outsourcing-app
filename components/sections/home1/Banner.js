@@ -54,10 +54,10 @@ export default function Banner() {
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
                         <h2 className="main-slider__title">
-                          OnPoint: <span>Your Trusted</span> China Sourcing Partner
+                          REO Trades: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With OnPoint, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With REO Trades, sourcing from China is seamless and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>
@@ -109,10 +109,10 @@ export default function Banner() {
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
                         <h2 className="main-slider__title">
-                          OnPoint: <span>Your Trusted</span> China Sourcing Partner
+                          REO Trades: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With OnPoint, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With REO Trades, sourcing from China is seamless and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>
@@ -164,10 +164,10 @@ export default function Banner() {
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
                         <h2 className="main-slider__title">
-                          OnPoint: <span>Your Trusted</span> China Sourcing Partner
+                          REO Trades: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With OnPoint, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With REO Trades, sourcing from China is seamless and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>
@@ -219,10 +219,10 @@ export default function Banner() {
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
                         <h2 className="main-slider__title">
-                          OnPoint: <span>Your Trusted</span> China Sourcing Partner
+                          REO Trades: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With OnPoint, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With REO Trades, sourcing from China is seamless and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>

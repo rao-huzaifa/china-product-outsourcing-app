@@ -9,6 +9,7 @@ import Footer1 from './footer/Footer1'
 import Footer2 from './footer/Footer2'
 import Header1 from "./header/Header1"
 import Header2 from './header/Header2'
+import ChatbotEnhanced from '../chatbot/ChatbotEnhanced'
 
 export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, children, wrapperCls }) {
     const [scroll, setScroll] = useState(0)
@@ -64,6 +65,7 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
                 {footerStyle == 2 ? < Footer2 /> : null}
             </div>
             <BackToTop scroll={scroll} />
+            <ChatbotEnhanced />
         </>
     )
 }

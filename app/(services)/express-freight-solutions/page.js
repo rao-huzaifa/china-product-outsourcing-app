@@ -210,7 +210,7 @@ export default function Home() {
                                                     distracted by the readable content of a p looking at its
                                                     a layout. The point of using Lorem Ipsum is that it has
                                                     a more-or-less normal distribution of a letter as
-                                                    opposed to a using 'Content here, content here.It is a
+                                                    opposed to a using &apos;Content here, content here.&apos; It is a
                                                     long
                                                 </p>
                                             </div>
@@ -229,7 +229,7 @@ export default function Home() {
                                                     distracted by the readable content of a p looking at its
                                                     a layout. The point of using Lorem Ipsum is that it has
                                                     a more-or-less normal distribution of a letter as
-                                                    opposed to a using 'Content here, content here.It is a
+                                                    opposed to a using &apos;Content here, content here.&apos; It is a
                                                     long
                                                 </p>
                                             </div>
@@ -248,7 +248,7 @@ export default function Home() {
                                                 distracted by the readable content of a p looking at its
                                                 a layout. The point of using Lorem Ipsum is that it has
                                                 a more-or-less normal distribution of a letter as
-                                                opposed to a using 'Content here, content here.It is a
+                                                opposed to a using &apos;Content here, content here.&apos; It is a
                                                 long
                                             </p>
                                             </div>

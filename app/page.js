@@ -12,6 +12,7 @@ import Faq from "../components/sections/home1/Faq"
 import Testimonial from "../components/sections/home1/Testimonial"
 import Blog from "../components/sections/home1/Blog"
 import Cta from "../components/sections/home1/Cta"
+import ProcessOne from "../components/sections/home2/ProcessOne"
 export default function Home() {
 
     return (
@@ -20,6 +21,7 @@ export default function Home() {
                 <Banner />
                 <ServicesOne />
                 <WhyChoose />
+                <ProcessOne />
                 <Project />
                 <Brand />
                 <About />

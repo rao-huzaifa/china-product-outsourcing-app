@@ -6,12 +6,12 @@ export default function AboutHero() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-10 text-center">
-            <h1 className="about-hero__title">OnPoint: Your Trusted China Sourcing Partner</h1>
+            <h1 className="about-hero__title">REO Trades: Your Trusted China Sourcing Partner</h1>
             <p className="about-hero__subtitle">
-              Welcome to OnPoint – Where Vision Meets Execution
+              Welcome to REO Trades – Where Vision Meets Execution
             </p>
             <p className="about-hero__desc">
-              At OnPoint, we’re more than just a sourcing agent in China – we’re your strategic partner in achieving manufacturing excellence. Founded by industry experts driven by innovation and efficiency, OnPoint has become a trusted leader in connecting businesses worldwide with China’s vast manufacturing capabilities.
+              At REO Trades, we’re more than just a sourcing agent in China – we’re your strategic partner in achieving manufacturing excellence. Founded by industry experts driven by innovation and efficiency, REO Trades has become a trusted leader in connecting businesses worldwide with China’s vast manufacturing capabilities.
             </p>
           </div>
         </div>

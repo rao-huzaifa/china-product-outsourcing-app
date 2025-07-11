@@ -1,13 +1,15 @@
 "use client"
 
-import Layout from "../../../components/layout/Layout"
+import Layout from "../../../../components/layout/Layout"
 import Link from "next/link"
 import { createClient } from '@sanity/client'
 import { useEffect, useState, useRef } from 'react'
 
-export default function Home() {
+export default function BlogCategoryPage({ params }) {
+    const { category } = params
     const [blogs, setBlogs] = useState([])
     const [latestBlogs, setLatestBlogs] = useState([])
+    const [categoryTitle, setCategoryTitle] = useState('')
     const [visibleCount, setVisibleCount] = useState(4)
     const [loading, setLoading] = useState(false)
     const loader = useRef(null)
@@ -21,7 +23,7 @@ export default function Home() {
     })
 
     useEffect(() => {
-        sanity.fetch(`*[_type == "blog"]|order(publishedAt desc){
+        sanity.fetch(`*[_type == "blog" && references(*[_type=='blogCategory' && slug.current==$category]._id)]|order(publishedAt desc){
             _id,
             title,
             slug,
@@ -34,11 +36,15 @@ export default function Home() {
             commentsCount,
             socialLinks,
             tags
-        }`).then(data => {
+        }`, { category }).then(data => {
             setBlogs(data)
             setLatestBlogs(data.slice(0, 3))
         })
-    }, [sanity])
+        // Fetch category title
+        sanity.fetch(`*[_type=='blogCategory' && slug.current==$category][0]{title}`, { category }).then(cat => {
+            setCategoryTitle(cat?.title || category)
+        })
+    }, [sanity, category])
 
     // Infinite scroll logic
     useEffect(() => {
@@ -60,7 +66,7 @@ export default function Home() {
 
     return (
         <>
-            <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Blog">
+            <Layout headerStyle={1} footerStyle={1} breadcrumbTitle={categoryTitle}>
                 <div>
                     {/*Blog Page Start*/}
                     <section className="blog-page">
@@ -73,7 +79,7 @@ export default function Home() {
                                             {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
                                                 <img src={blog.mainImage.asset.url} alt={blog.title} />
                                             ) : (
-                                                <img src="assets/images/blog/blog-page-1-1.jpg" alt="" />
+                                                <img src="/assets/images/blog/blog-page-1-1.jpg" alt="" />
                                             )}
                                             <div className="blog-page__date">
                                                 <p>{blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '29 jan 2024'}</p>
@@ -95,13 +101,13 @@ export default function Home() {
                                                 </li>
                                             </ul>
                                             <h3 className="blog-page__title">
-                                                <Link href={`/blog/${blog.categories?.[0]?.slug?.current || 'category'}/${blog.slug?.current || ''}`}>{blog.title}</Link>
+                                                <Link href={`/blog/${category}/${blog.slug?.current || ''}`}>{blog.title}</Link>
                                             </h3>
                                             <p className="blog-page__text">
                                                 {blog.excerpt}
                                             </p>
                                             <div className="blog-page__btn-box">
-                                                <Link href={`/blog/${blog.categories?.[0]?.slug?.current || 'category'}/${blog.slug?.current || ''}`} className="thm-btn blog-page__btn">
+                                                <Link href={`/blog/${category}/${blog.slug?.current || ''}`} className="thm-btn blog-page__btn">
                                                     Read more
                                                     <span />
                                                 </Link>
@@ -138,7 +144,7 @@ export default function Home() {
                                                         {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
                                                             <img src={blog.mainImage.asset.url} alt={blog.title} />
                                                         ) : (
-                                                            <img src="assets/images/blog/lp-1-1.jpg" alt="" />
+                                                            <img src="/assets/images/blog/lp-1-1.jpg" alt="" />
                                                         )}
                                                     </div>
                                                     <div className="sidebar__post-content">
@@ -147,7 +153,7 @@ export default function Home() {
                                                             {blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : ''}
                                                         </p>
                                                         <h3>
-                                                            <Link href={`/blog/${blog.categories?.[0]?.slug?.current || 'category'}/${blog.slug?.current || ''}`}>{blog.title}</Link>
+                                                            <Link href={`/blog/${category}/${blog.slug?.current || ''}`}>{blog.title}</Link>
                                                         </h3>
                                                     </div>
                                                 </li>
@@ -160,22 +166,7 @@ export default function Home() {
                                         <ul className="sidebar__category-list list-unstyled">
                                             <li>
                                             <Link href="#">
-                                                Express Freight Solutions <span>(02)</span>
-                                            </Link>
-                                            </li>
-                                            <li>
-                                            <Link href="#">
-                                                QuickMove Logistics <span>(02)</span>
-                                            </Link>
-                                            </li>
-                                            <li>
-                                            <Link href="#">
-                                                Speedy Dispatch <span>(02)</span>
-                                            </Link>
-                                            </li>
-                                            <li>
-                                            <Link href="#">
-                                                Swift Supply Chain <span>(02)</span>
+                                                {categoryTitle} <span>({blogs.length})</span>
                                             </Link>
                                             </li>
                                         </ul>
@@ -206,14 +197,14 @@ export default function Home() {
                             <div
                             className="cta-one__bg-img"
                             style={{
-                                backgroundImage: "url(assets/images/resources/cta-one-bg-img.jpg)"
+                                backgroundImage: "url(/assets/images/resources/cta-one-bg-img.jpg)"
                             }}
                             />
                             <div className="cta-one__content-box">
                             <div className="cta-one__icon">
                                 <span className="icon-call" />
                                 <div className="cta-one__shape-1">
-                                <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
+                                <img src="/assets/images/shapes/cta-one-shape-1.png" alt="" />
                                 </div>
                             </div>
                             <h3 className="cta-one__title">
@@ -249,4 +240,4 @@ export default function Home() {
             `}</style>
         </>
     )
-}
+} 

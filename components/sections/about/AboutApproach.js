@@ -18,7 +18,7 @@ export default function AboutApproach() {
           <div className="col-xl-8 text-center">
             <h2 className="about-approach__title mb-3">Our Approach</h2>
             <p className="about-approach__desc">
-              Whether you’re new to importing from China or looking to streamline your supply chain, OnPoint crafts solutions to drive your business forward.
+              Whether you’re new to importing from China or looking to streamline your supply chain, REO Trades crafts solutions to drive your business forward.
             </p>
           </div>
         </div>

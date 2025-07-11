@@ -22,7 +22,7 @@ export default function Error404() {
                             <h2 className="error-page__title">404</h2>
                             </div>
                             <h3 className="error-page__tagline">
-                            Sorry we can't find that page!
+                            Sorry we can&apos;t find that page!
                             </h3>
                             <p className="error-page__text">
                             The page you are looking for was never existed.

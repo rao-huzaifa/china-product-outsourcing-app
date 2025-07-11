@@ -18,7 +18,7 @@ export default function AboutFeatures() {
           <div className="col-xl-8 text-center">
             <h2 className="about-features__title mb-3">What Sets Us Apart</h2>
             <p className="about-features__desc">
-              Discover the OnPoint difference. We combine expertise, innovation, and transparency to deliver exceptional results.
+              Discover the REO Trades difference. We combine expertise, innovation, and transparency to deliver exceptional results.
             </p>
           </div>
         </div>

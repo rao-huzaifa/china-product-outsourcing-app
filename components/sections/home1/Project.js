@@ -1,12 +1,36 @@
+'use client'
 import Link from "next/link"
+import { useEffect, useState } from "react"
+import { createClient } from '@sanity/client'
+
 export default function Project() {
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        const sanity = createClient({
+            projectId: 'hjoc1p23',
+            dataset: 'production',
+            apiVersion: '2024-07-08',
+            useCdn: true,
+        })
+        const fetchCategories = async () => {
+            try {
+                const result = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug, image{asset->{url}} }`)
+                setCategories(result)
+            } catch (error) {
+                setCategories([])
+            }
+        }
+        fetchCategories()
+    }, [])
+
     return (
         <>
             {/*Project Two Start*/}
             <section className="project-one">
                 <div className="container">
                 <div className="row">
-                    {/*Project Two Single Start*/}
+                    {/* Latest Project Callout */}
                     <div
                     className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                     data-wow-delay="100ms"
@@ -33,112 +57,65 @@ export default function Project() {
                         </div>
                     </div>
                     </div>
-                    {/*Project Two Single End*/}
-                    {/*Project Two Single Start*/}
-                    <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="300ms"
-                    >
-                    <div className="project-two__single">
-                        <div className="project-two__img">
-                        <img src="assets/images/project/project-2-1.jpg" alt="" />
-                        <div className="project-two__content">
-                            <p className="project-two__sub-title">Express Logistics</p>
-                            <h3 className="project-two__title">
-                            <Link href="/project-details">
-                                Delivering success through logistics
-                            </Link>
-                            </h3>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    {/*Project Two Single End*/}
-                    {/*Project Two Single Start*/}
-                    <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="500ms"
-                    >
-                    <div className="project-two__single">
-                        <div className="project-two__img">
-                        <img src="assets/images/project/project-2-2.jpg" alt="" />
-                        <div className="project-two__content">
-                            <p className="project-two__sub-title">Express Logistics</p>
-                            <h3 className="project-two__title">
-                            <Link href="/project-details">
-                                Delivering success through logistics
-                            </Link>
-                            </h3>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    {/*Project Two Single End*/}
-                    {/*Project Two Single Start*/}
-                    <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="700ms"
-                    >
-                    <div className="project-two__single">
-                        <div className="project-two__img">
-                        <img src="assets/images/project/project-2-3.jpg" alt="" />
-                        <div className="project-two__content">
-                            <p className="project-two__sub-title">Express Logistics</p>
-                            <h3 className="project-two__title">
-                            <Link href="/project-details">
-                                Delivering success through logistics
-                            </Link>
-                            </h3>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    {/*Project Two Single End*/}
-                    {/*Project Two Single Start*/}
-                    <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="900ms"
-                    >
-                    <div className="project-two__single">
-                        <div className="project-two__img">
-                        <img src="assets/images/project/project-2-4.jpg" alt="" />
-                        <div className="project-two__content">
-                            <p className="project-two__sub-title">Express Logistics</p>
-                            <h3 className="project-two__title">
-                            <Link href="/project-details">
-                                Delivering success through logistics
-                            </Link>
-                            </h3>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    {/*Project Two Single End*/}
-                    {/*Project Two Single Start*/}
-                    <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="1100ms"
-                    >
-                    <div className="project-two__single">
-                        <div className="project-two__img">
-                        <img src="assets/images/project/project-2-5.jpg" alt="" />
-                        <div className="project-two__content">
-                            <p className="project-two__sub-title">Express Logistics</p>
-                            <h3 className="project-two__title">
-                            <Link href="/project-details">
-                                Delivering success through logistics
-                            </Link>
-                            </h3>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    {/*Project Two Single End*/}
+                    {/* Dynamic Project Categories */}
+                    {categories.length > 0 ? (
+                        categories.slice(0, 5).map((cat, idx) => (
+                            <div
+                                key={cat.slug.current}
+                                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                                data-wow-delay={`${300 + idx * 200}ms`}
+                            >
+                                <div className="project-two__single">
+                                    <div className="project-two__img">
+                                        {cat.image && cat.image.asset && cat.image.asset.url ? (
+                                            <img src={cat.image.asset.url} alt={cat.title} />
+                                        ) : (
+                                            <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e5e5e5', borderRadius: '20px', minHeight: 200}}>
+                                                <span style={{fontSize: '2rem', color: '#222'}}>{cat.title}</span>
+                                            </div>
+                                        )}
+                                        <div className="project-two__content">
+                                            <p className="project-two__sub-title">Project Category</p>
+                                            <h3 className="project-two__title">
+                                                <Link href={`/projects/${cat.slug.current}`}>
+                                                    {cat.title}
+                                                </Link>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        // Fallback to static placeholders if no categories
+                        [1,2,3,4,5].map((n, idx) => (
+                            <div
+                                key={n}
+                                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                                data-wow-delay={`${300 + idx * 200}ms`}
+                            >
+                                <div className="project-two__single">
+                                    <div className="project-two__img">
+                                        <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e5e5e5', borderRadius: '20px', minHeight: 200}}>
+                                            <span style={{fontSize: '2rem', color: '#222'}}>410X310</span>
+                                        </div>
+                                        <div className="project-two__content">
+                                            <p className="project-two__sub-title">Express Logistics</p>
+                                            <h3 className="project-two__title">
+                                                <Link href="/project-details">
+                                                    Delivering success through logistics
+                                                </Link>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
                 </div>
             </section>
             {/*Project Two End*/}
         </>
-
     )
 }

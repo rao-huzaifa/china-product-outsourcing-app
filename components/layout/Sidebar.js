@@ -25,9 +25,7 @@ export default function Sidebar({ isSidebar, handleSidebar }) {
                         <div className="content-box">
                             <h4>About Us</h4>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-                            tempor incididunt ut labore et magna aliqua. Ut enim ad minim
-                            veniam laboris.
+                            REO Trades is your trusted partner for seamless China sourcing and manufacturing solutions. We connect businesses worldwide with China&apos;s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind throughout your product journey.
                             </p>
                         </div>
                         <div className="form-inner">

@@ -1,9 +1,9 @@
 'use client'
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from '@sanity/client'
 
-const MobileMenu = async ({ isSidebar, handleMobileMenu, handleSidebar }) => {
+const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
   const [isActive, setIsActive] = useState({
     status: false,
     key: "",
@@ -18,7 +18,19 @@ const MobileMenu = async ({ isSidebar, handleMobileMenu, handleSidebar }) => {
     useCdn: true,
   })
   // Fetch categories
-  const categories = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const result = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
+        setCategories(result)
+      } catch (error) {
+        console.error('Error fetching categories:', error)
+      }
+    }
+    fetchCategories()
+  }, [])
 
   const handleToggle = (key, subMenuKey = "") => {
     if (isActive.key === key && isActive.subMenuKey === subMenuKey) {
