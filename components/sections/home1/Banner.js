@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import Image from 'next/image'
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -46,10 +47,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <img
-                              src="assets/images/icon/main-slider-sub-title-icon.png"
-                              alt=""
-                            />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
@@ -101,10 +99,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <img
-                              src="assets/images/icon/main-slider-sub-title-icon.png"
-                              alt=""
-                            />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
@@ -156,10 +151,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <img
-                              src="assets/images/icon/main-slider-sub-title-icon.png"
-                              alt=""
-                            />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
@@ -211,10 +203,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <img
-                              src="assets/images/icon/main-slider-sub-title-icon.png"
-                              alt=""
-                            />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>

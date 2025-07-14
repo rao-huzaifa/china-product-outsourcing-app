@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image'
 export default function Blog() {
     return (
         <>
@@ -23,7 +24,7 @@ export default function Blog() {
                     <div className="blog-one__single">
                         <div className="blog-one__img-box">
                         <div className="blog-one__img">
-                            <img src="assets/images/blog/blog-1-1.jpg" alt="" />
+                            <Image src="/assets/images/blog/blog-1-1.jpg" alt="" width={400} height={300} />
                         </div>
                         <div className="blog-one__date">
                             <p>24 March</p>
@@ -54,7 +55,7 @@ export default function Blog() {
                     <div className="blog-one__single">
                         <div className="blog-one__img-box">
                         <div className="blog-one__img">
-                            <img src="assets/images/blog/blog-1-2.jpg" alt="" />
+                            <Image src="/assets/images/blog/blog-1-2.jpg" alt="" width={400} height={300} />
                         </div>
                         <div className="blog-one__date">
                             <p>24 March</p>
@@ -88,7 +89,7 @@ export default function Blog() {
                     <div className="blog-one__single">
                         <div className="blog-one__img-box">
                         <div className="blog-one__img">
-                            <img src="assets/images/blog/blog-1-3.jpg" alt="" />
+                            <Image src="/assets/images/blog/blog-1-3.jpg" alt="" width={400} height={300} />
                         </div>
                         <div className="blog-one__date">
                             <p>24 March</p>

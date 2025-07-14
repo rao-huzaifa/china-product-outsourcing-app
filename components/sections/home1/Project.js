@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { createClient } from '@sanity/client'
+import Image from 'next/image'
 
 export default function Project() {
     const [categories, setCategories] = useState([])
@@ -68,10 +69,10 @@ export default function Project() {
                                 <div className="project-two__single">
                                     <div className="project-two__img">
                                         {cat.image && cat.image.asset && cat.image.asset.url ? (
-                                            <img src={cat.image.asset.url} alt={cat.title} />
+                                            <Image src={cat.image.asset.url} alt={cat.title} width={410} height={310} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '20px' }} />
                                         ) : (
-                                            <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e5e5e5', borderRadius: '20px', minHeight: 200}}>
-                                                <span style={{fontSize: '2rem', color: '#222'}}>{cat.title}</span>
+                                            <div style={{height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e5e5e5', borderRadius: '20px'}}>
+                                                <span style={{fontSize: '2rem', color: '#222'}}>410X310</span>
                                             </div>
                                         )}
                                         <div className="project-two__content">

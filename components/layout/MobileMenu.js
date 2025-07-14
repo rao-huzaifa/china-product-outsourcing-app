@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { createClient } from '@sanity/client'
+import Image from 'next/image'
 
 const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
   const [isActive, setIsActive] = useState({
@@ -30,7 +31,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
       }
     }
     fetchCategories()
-  }, [])
+  }, [sanity])
 
   const handleToggle = (key, subMenuKey = "") => {
     if (isActive.key === key && isActive.subMenuKey === subMenuKey) {
@@ -60,7 +61,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                     </span>
                     <div className="logo-box">
                     <Link href="/" aria-label="logo image">
-                        <img src="assets/images/resources/logo-2.png" width={150} alt="" />
+                        <Image src="/assets/images/resources/logo-2.png" width={150} height={50} alt="REO Trades Logo" />
                     </Link>
                     </div>
                     {/* /.logo-box */}

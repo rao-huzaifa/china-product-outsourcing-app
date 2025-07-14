@@ -4,6 +4,7 @@ import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
 import { createClient } from '@sanity/client'
 import { useEffect, useState, useRef } from 'react'
+import Image from 'next/image'
 
 export default function Home() {
     const [blogs, setBlogs] = useState([])
@@ -11,6 +12,8 @@ export default function Home() {
     const [visibleCount, setVisibleCount] = useState(4)
     const [loading, setLoading] = useState(false)
     const loader = useRef(null)
+    const [categories, setCategories] = useState([])
+    const [allTags, setAllTags] = useState([])
 
     // Create sanity client outside useEffect
     const sanity = createClient({
@@ -37,7 +40,12 @@ export default function Home() {
         }`).then(data => {
             setBlogs(data)
             setLatestBlogs(data.slice(0, 3))
+            // Aggregate all unique tags
+            const tags = Array.from(new Set(data.flatMap(blog => blog.tags || [])))
+            setAllTags(tags)
         })
+        // Fetch all categories
+        sanity.fetch(`*[_type == "blogCategory"] | order(title asc){ title, slug }`).then(setCategories)
     }, [sanity])
 
     // Infinite scroll logic
@@ -71,9 +79,9 @@ export default function Home() {
                                     <div className="blog-page__single" key={blog._id || idx} style={{ opacity: 0, animation: `fadeIn 0.7s ${idx * 0.1}s forwards` }}>
                                         <div className="blog-page__img">
                                             {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
-                                                <img src={blog.mainImage.asset.url} alt={blog.title} />
+                                                <Image src={blog.mainImage.asset.url.startsWith('/') ? blog.mainImage.asset.url : '/' + blog.mainImage.asset.url} alt={blog.title} width={400} height={300} />
                                             ) : (
-                                                <img src="assets/images/blog/blog-page-1-1.jpg" alt="" />
+                                                <Image src="/assets/images/blog/blog-page-1-1.jpg" alt="" width={400} height={300} />
                                             )}
                                             <div className="blog-page__date">
                                                 <p>{blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '29 jan 2024'}</p>
@@ -136,9 +144,9 @@ export default function Home() {
                                                 <li key={blog._id || idx}>
                                                     <div className="sidebar__post-image">
                                                         {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
-                                                            <img src={blog.mainImage.asset.url} alt={blog.title} />
+                                                            <Image src={blog.mainImage.asset.url.startsWith('/') ? blog.mainImage.asset.url : '/' + blog.mainImage.asset.url} alt={blog.title} width={100} height={100} />
                                                         ) : (
-                                                            <img src="assets/images/blog/lp-1-1.jpg" alt="" />
+                                                            <Image src="/assets/images/blog/lp-1-1.jpg" alt="" width={100} height={100} />
                                                         )}
                                                     </div>
                                                     <div className="sidebar__post-content">
@@ -158,37 +166,19 @@ export default function Home() {
                                     <div className="sidebar__single sidebar__category">
                                         <h3 className="sidebar__title">Category</h3>
                                         <ul className="sidebar__category-list list-unstyled">
-                                            <li>
-                                            <Link href="#">
-                                                Express Freight Solutions <span>(02)</span>
-                                            </Link>
-                                            </li>
-                                            <li>
-                                            <Link href="#">
-                                                QuickMove Logistics <span>(02)</span>
-                                            </Link>
-                                            </li>
-                                            <li>
-                                            <Link href="#">
-                                                Speedy Dispatch <span>(02)</span>
-                                            </Link>
-                                            </li>
-                                            <li>
-                                            <Link href="#">
-                                                Swift Supply Chain <span>(02)</span>
-                                            </Link>
-                                            </li>
+                                            {categories.map(cat => (
+                                                <li key={cat.slug.current}>
+                                                    <Link href={`/blog/${cat.slug.current}`}>{cat.title}</Link>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                     <div className="sidebar__single sidebar__tags">
                                         <h3 className="sidebar__title">Tags</h3>
                                         <div className="sidebar__tags-list">
-                                            <Link href="#">Prime Movers</Link>
-                                            <Link href="#">Dispatch</Link>
-                                            <Link href="#">Logistics</Link>
-                                            <Link href="#">Shipping</Link>
-                                            <Link href="#">Cargo</Link>
-                                            <Link href="#">Reliable Third</Link>
+                                            {allTags.map((tag, idx) => (
+                                                <Link href="#" key={idx}>{tag}</Link>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>

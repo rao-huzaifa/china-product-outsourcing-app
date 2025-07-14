@@ -3,6 +3,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { useEffect, useState } from 'react'
 import { createClient } from '@sanity/client'
+import Image from 'next/image'
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -79,7 +80,7 @@ export default function TestimonialSlider1() {
                             </div>
                             <div className="testimonial-one__client-img">
                                 {item.image && item.image.asset && item.image.asset.url ? (
-                                    <img src={item.image.asset.url} alt={item.name} />
+                                    <Image src={item.image.asset.url} alt={item.name} width={100} height={100} />
                                 ) : (
                                     <div style={{width:63, height:63, borderRadius:'50%', background:'#e5e5e5', display:'flex', alignItems:'center', justifyContent:'center', fontSize:14}}>63X63</div>
                                 )}

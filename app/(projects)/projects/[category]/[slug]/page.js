@@ -1,6 +1,7 @@
 import { createClient } from '@sanity/client'
 import { PortableText } from '@portabletext/react'
 import Layout from "../../../../../components/layout/Layout"
+import Image from 'next/image'
 
 const sanity = createClient({
   projectId: 'hjoc1p23',
@@ -34,7 +35,7 @@ export default async function ProjectDetailsPage({ params }) {
     <Layout headerStyle={1} footerStyle={1} breadcrumbTitle={project.title}>
       {/* Static hero image for all projects */}
       <div className="project-hero">
-        <img src="/assets/images/project/project-details-hero.jpg" alt="Project Hero" style={{ width: '100%', height: 'auto' }} />
+        <Image src="/assets/images/project/project-details-hero.jpg" alt="Project Hero" width={600} height={300} style={{ width: '100%', height: 'auto' }} />
       </div>
       <div>
         <section className="project-details">
@@ -112,9 +113,11 @@ export default async function ProjectDetailsPage({ params }) {
               <div className="col-xl-8">
                 <div className="project-details__right">
                   <div className="project-details__img">
-                    <img
+                    <Image
                       src={project?.mainImage?.asset?.url || "/assets/images/project/project-details-img-1.jpg"}
                       alt={project?.title}
+                      width={800}
+                      height={400}
                     />
                   </div>
                   <h3 className="project-details__title-1">
@@ -128,9 +131,11 @@ export default async function ProjectDetailsPage({ params }) {
                       {project?.gallery?.slice(0, 2).map((img, i) => (
                         <div className="col-xl-6" key={i}>
                           <div className="project-details__img-box-img">
-                            <img
+                            <Image
                               src={img.asset.url}
                               alt={`Gallery image ${i + 1}`}
+                              width={400}
+                              height={300}
                             />
                           </div>
                         </div>

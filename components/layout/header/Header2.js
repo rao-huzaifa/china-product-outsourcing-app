@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
+import Image from 'next/image'
 export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSidebar, handlePopup, handleSidebar }) {
     return (
 
@@ -12,7 +13,7 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSide
                     <div className="main-menu-two__left">
                     <div className="main-menu-two__logo">
                         <Link href="/">
-                        <img src="assets/images/resources/logo-2.png" alt="" />
+                        <Image src="/assets/images/resources/logo-2.png" alt="REO Trades Logo" width={180} height={60} />
                         </Link>
                     </div>
                     <div className="main-menu-two__main-menu-box">
@@ -59,7 +60,7 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSide
                         <div className="main-menu-two__left">
                             <div className="main-menu-two__logo">
                             <Link href="/">
-                                <img src="assets/images/resources/logo-2.png" alt="" />
+                                <Image src="/assets/images/resources/logo-2.png" alt="REO Trades Logo" width={180} height={60} />
                             </Link>
                             </div>
                             <div className="main-menu-two__main-menu-box">

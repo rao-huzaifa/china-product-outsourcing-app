@@ -4,6 +4,7 @@ import Layout from "../../../../components/layout/Layout"
 import Link from "next/link"
 import { createClient } from '@sanity/client'
 import { useEffect, useState, useRef } from 'react'
+import Image from 'next/image'
 
 export default function BlogCategoryPage({ params }) {
     const { category } = params
@@ -13,6 +14,7 @@ export default function BlogCategoryPage({ params }) {
     const [visibleCount, setVisibleCount] = useState(4)
     const [loading, setLoading] = useState(false)
     const loader = useRef(null)
+    const [categoryTags, setCategoryTags] = useState([])
 
     // Create sanity client outside useEffect
     const sanity = createClient({
@@ -40,9 +42,10 @@ export default function BlogCategoryPage({ params }) {
             setBlogs(data)
             setLatestBlogs(data.slice(0, 3))
         })
-        // Fetch category title
-        sanity.fetch(`*[_type=='blogCategory' && slug.current==$category][0]{title}`, { category }).then(cat => {
+        // Fetch category title and tags
+        sanity.fetch(`*[_type=='blogCategory' && slug.current==$category][0]{title, tags}`, { category }).then(cat => {
             setCategoryTitle(cat?.title || category)
+            setCategoryTags(cat?.tags || [])
         })
     }, [sanity, category])
 
@@ -77,9 +80,9 @@ export default function BlogCategoryPage({ params }) {
                                     <div className="blog-page__single" key={blog._id || idx} style={{ opacity: 0, animation: `fadeIn 0.7s ${idx * 0.1}s forwards` }}>
                                         <div className="blog-page__img">
                                             {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
-                                                <img src={blog.mainImage.asset.url} alt={blog.title} />
+                                                <Image src={blog.mainImage.asset.url} alt={blog.title} width={400} height={300} />
                                             ) : (
-                                                <img src="/assets/images/blog/blog-page-1-1.jpg" alt="" />
+                                                <Image src="/assets/images/blog/blog-page-1-1.jpg" alt="" width={400} height={300} />
                                             )}
                                             <div className="blog-page__date">
                                                 <p>{blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '29 jan 2024'}</p>
@@ -142,9 +145,9 @@ export default function BlogCategoryPage({ params }) {
                                                 <li key={blog._id || idx}>
                                                     <div className="sidebar__post-image">
                                                         {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
-                                                            <img src={blog.mainImage.asset.url} alt={blog.title} />
+                                                            <Image src={blog.mainImage.asset.url} alt={blog.title} width={100} height={100} />
                                                         ) : (
-                                                            <img src="/assets/images/blog/lp-1-1.jpg" alt="" />
+                                                            <Image src="/assets/images/blog/lp-1-1.jpg" alt="" width={100} height={100} />
                                                         )}
                                                     </div>
                                                     <div className="sidebar__post-content">
@@ -174,12 +177,13 @@ export default function BlogCategoryPage({ params }) {
                                     <div className="sidebar__single sidebar__tags">
                                         <h3 className="sidebar__title">Tags</h3>
                                         <div className="sidebar__tags-list">
-                                            <Link href="#">Prime Movers</Link>
-                                            <Link href="#">Dispatch</Link>
-                                            <Link href="#">Logistics</Link>
-                                            <Link href="#">Shipping</Link>
-                                            <Link href="#">Cargo</Link>
-                                            <Link href="#">Reliable Third</Link>
+                                            {categoryTags.length > 0 ? (
+                                                categoryTags.map((tag, idx) => (
+                                                    <Link href="#" key={idx}>{tag}</Link>
+                                                ))
+                                            ) : (
+                                                <span style={{color:'#aaa'}}>No tags for this category</span>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

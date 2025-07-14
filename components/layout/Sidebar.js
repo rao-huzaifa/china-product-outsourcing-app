@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image'
 
 export default function Sidebar({ isSidebar, handleSidebar }) {
     return (
@@ -19,7 +20,7 @@ export default function Sidebar({ isSidebar, handleSidebar }) {
                         <div className="content-inner">
                         <div className="logo">
                             <Link href="/">
-                            <img src="assets/images/resources/logo-2.png" alt="" />
+                            <Image src="/assets/images/resources/logo-2.png" width={150} height={50} alt="REO Trades Logo" />
                             </Link>
                         </div>
                         <div className="content-box">

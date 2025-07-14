@@ -41,7 +41,7 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
                 setScroll(scrollCheck)
             }
         })
-    }, [])
+    }, [scroll])
     return (
         <>
             <DataBg />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CounterUp from "../../elements/CounterUp"
+import Image from 'next/image'
 
 export default function About() {
     return (
@@ -23,7 +24,7 @@ export default function About() {
                         </p>
                         <div className="about-one__list-box">
                         <div className="about-one__shape-1">
-                            <img src="assets/images/shapes/about-one-shape-1.png" alt="" />
+                            <Image src="/assets/images/shapes/about-one-shape-1.png" alt="" width={100} height={100} />
                         </div>
                         <ul className="about-one__list list-unstyled">
                             <li>
@@ -67,10 +68,10 @@ export default function About() {
                     >
                         <div className="about-one__img-box">
                         <div className="about-one__img-1">
-                            <img src="assets/images/resources/about-one-img-1.jpg" alt="" />
+                            <Image src="/assets/images/resources/about-one-img-1.jpg" alt="" width={400} height={300} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
                         </div>
                         <div className="about-one__img-2">
-                            <img src="assets/images/resources/about-one-img-2.jpg" alt="" />
+                            <Image src="/assets/images/resources/about-one-img-2.jpg" alt="" width={400} height={300} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
                         </div>
                         <div className="about-one__trusted-box">
                             <div className="about-one__trust-icon">

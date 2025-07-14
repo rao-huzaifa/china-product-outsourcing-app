@@ -2,6 +2,7 @@
 import ModalVideo from 'react-modal-video';
 import { useState } from 'react'
 import CounterUp from "../../elements/CounterUp"
+import Image from 'next/image'
 export default function Counter() {
     const [isOpen, setOpen] = useState(false);
     return (
@@ -18,7 +19,7 @@ export default function Counter() {
                                 style={{height: '100%', display: 'flex', flex: 1}}
                             >
                                 <div className="counter-one__img" style={{height: '100%', display: 'flex', alignItems: 'center'}}>
-                                    <img src="https://img.youtube.com/vi/NSpA-Hwdr_M/maxresdefault.jpg" alt="Video Thumbnail" style={{borderRadius: '16px', width: '100%', height: '100%', objectFit: 'cover', minHeight: 300}} />
+                                    <Image src="https://img.youtube.com/vi/NSpA-Hwdr_M/maxresdefault.jpg" alt="Video Thumbnail" width={400} height={225} style={{borderRadius: '16px', width: '100%', height: '100%', objectFit: 'cover', minHeight: 300}} />
                                     <div className="counter-one__video-link">
                                         <a onClick={() => setOpen(true)} className="video-popup" data-fancybox="video-1" data-caption="">
                                             <div className="counter-one__video-icon">

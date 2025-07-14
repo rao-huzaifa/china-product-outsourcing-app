@@ -5,6 +5,7 @@ import Testimonial from '../../components/sections/home1/Testimonial';
 import Cta from '../../components/sections/home1/Cta';
 import { useState } from 'react';
 import Layout from '../../components/layout/Layout';
+import Project from '../../components/sections/home1/Project';
 import '../../styles/about-unified.css';
 
 function SectionWrapper({ children, className = '', bg = '', divider = false, style = {} }) {
@@ -51,121 +52,6 @@ function FounderNote() {
             </div>
           </div>
         </div>
-      </div>
-    </SectionWrapper>
-  );
-}
-
-function IndustriesServed() {
-  const industries = [
-    'Chemical Industries', 'Automobile Manufacturers', 'Clothing & Textile', 'Tool & Equipment',
-    'Cement & Construction', 'Consumer Goods', 'Beauty Products', 'Skincare', 'Electrical',
-    'Footwear', 'Electronics', 'Mobile Accessories', 'Furniture', 'Eyewear', 'Pharmaceuticals',
-    'Metal Products', 'Mobiles & Tablets'
-  ];
-  const colors = [
-    'linear-gradient(135deg, #0d6efd 0%, #00c6ff 100%)',
-    'linear-gradient(135deg, #ff6a00 0%, #ffb347 100%)',
-    'linear-gradient(135deg, #28a745 0%, #a8e063 100%)',
-    'linear-gradient(135deg, #6610f2 0%, #b993ff 100%)',
-  ];
-  return (
-    <SectionWrapper gradientFrom="#f8f9fb" gradientTo="#e3f0ff" divider className="mb-5 mt-5">
-      <div className="section-title text-center mb-4 wow fadeInDown" data-wow-delay="0.1s">
-        <div className="section-title__tagline-box">
-          <span className="section-title__tagline">Our Diverse Client Base</span>
-        </div>
-        <h2 className="section-title__title">Industries We Serve</h2>
-        <p className="lead">We proudly serve a wide range of clients, from bold startups to global corporations. Our expertise covers:</p>
-      </div>
-      <div className="row g-4">
-        {industries.map((industry, idx) => (
-          <div className="col-6 col-md-4 col-lg-3 text-center" key={industry}>
-            <div
-              className="p-4 shadow rounded h-100 wow zoomIn industry-card"
-              data-wow-delay={`${0.05 * idx}s`}
-              style={{
-                background: colors[idx % colors.length],
-                color: '#fff',
-                minHeight: 120,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 24,
-                boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
-                fontWeight: 500,
-                fontSize: '1.05rem',
-                letterSpacing: '0.01em',
-                transition: 'transform 0.2s, filter 0.2s',
-                cursor: 'pointer',
-              }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.filter = 'brightness(1.08)'; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.filter = 'brightness(1)'; }}
-            >
-              <span className="icon-box mb-2" style={{fontSize: '2rem', opacity: 0.8}}></span>
-              <div>{industry}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </SectionWrapper>
-  );
-}
-
-function ClientApproach() {
-  const features = [
-    { title: 'Personalized Service', desc: 'Tailored solutions to meet your unique needs.' },
-    { title: 'Transparent Communication', desc: 'Clear updates throughout the sourcing and manufacturing process.' },
-    { title: 'Dedicated Account Managers', desc: 'Ensuring seamless operations and support.' },
-    { title: 'Regular Progress Updates', desc: 'Detailed reports to keep you informed.' },
-  ];
-  const colors = [
-    'linear-gradient(135deg, #ff6a00 0%, #ffb347 100%)',
-    'linear-gradient(135deg, #0d6efd 0%, #00c6ff 100%)',
-    'linear-gradient(135deg, #28a745 0%, #a8e063 100%)',
-    'linear-gradient(135deg, #6610f2 0%, #b993ff 100%)',
-  ];
-  return (
-    <SectionWrapper gradientFrom="#f8f9fb" gradientTo="#fff0e3" divider className="mb-5 mt-5">
-      <div className="section-title text-center mb-4 wow fadeInDown" data-wow-delay="0.1s">
-        <div className="section-title__tagline-box">
-          <span className="section-title__tagline">Client-Centric Approach</span>
-        </div>
-        <h2 className="section-title__title">How We Put Clients First</h2>
-        <p className="lead">Our approach is built on trust, transparency, and support for every client.</p>
-      </div>
-      <div className="row g-4">
-        {features.map((feature, idx) => (
-          <div className="col-12 col-md-6 col-lg-3 text-center" key={feature.title}>
-            <div
-              className="p-4 shadow rounded h-100 wow zoomIn client-approach-card"
-              data-wow-delay={`${0.1 * idx}s`}
-              style={{
-                background: colors[idx % colors.length],
-                color: '#fff',
-                minHeight: 160,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 24,
-                boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
-                fontWeight: 500,
-                fontSize: '1.08rem',
-                letterSpacing: '0.01em',
-                transition: 'transform 0.2s, filter 0.2s',
-                cursor: 'pointer',
-              }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.filter = 'brightness(1.08)'; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.filter = 'brightness(1)'; }}
-            >
-              <span className="icon-check mb-3" style={{fontSize: '2.2rem', opacity: 0.9}}></span>
-              <h4 className="mb-2" style={{color: '#fff', fontWeight: 700}}>{feature.title}</h4>
-              <p className="mb-0" style={{color: '#fff', opacity: 0.95}}>{feature.desc}</p>
-            </div>
-          </div>
-        ))}
       </div>
     </SectionWrapper>
   );
@@ -309,8 +195,19 @@ export default function Home() {
       <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="About US">
         <About />
         <FounderNote />
-        <IndustriesServed />
-        <ClientApproach />
+        {/* Replace IndustriesServed with Project component for dynamic categories from Sanity */}
+        <section className="section-wrapper py-5">
+          <div className="container unified-container">
+            <div className="section-title text-center mb-4 wow fadeInDown" data-wow-delay="0.1s">
+              <div className="section-title__tagline-box">
+                <span className="section-title__tagline">Our Diverse Client Base</span>
+              </div>
+              <h2 className="section-title__title">Industries We Serve</h2>
+              <p className="lead">We proudly serve a wide range of clients, from bold startups to global corporations. Our expertise covers:</p>
+            </div>
+            <Project />
+          </div>
+        </section>
         <Partnerships />
         <OurApproach />
         <MissionCommitment />

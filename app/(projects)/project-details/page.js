@@ -3,6 +3,7 @@ import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
 import { createClient } from '@sanity/client'
 import { PortableText } from '@portabletext/react'
+import Image from 'next/image'
 
 const sanity = createClient({
   projectId: 'hjoc1p23',
@@ -130,9 +131,11 @@ export default async function ProjectDetailsPage() {
                 <div className="col-xl-8">
                   <div className="project-details__right">
                     <div className="project-details__img">
-                      <img
-                        src={project?.mainImage?.asset?.url || "assets/images/project/project-details-img-1.jpg"}
+                      <Image
+                        src={project?.mainImage?.asset?.url || "/assets/images/project/project-details-img-1.jpg"}
                         alt={project?.title}
+                        width={800}
+                        height={400}
                       />
                     </div>
                     <h3 className="project-details__title-1">
@@ -146,9 +149,11 @@ export default async function ProjectDetailsPage() {
                         {project?.gallery?.slice(0, 2).map((img, i) => (
                           <div className="col-xl-6" key={i}>
                             <div className="project-details__img-box-img">
-                              <img
+                              <Image
                                 src={img.asset.url}
                                 alt={`Gallery image ${i + 1}`}
+                                width={400}
+                                height={300}
                               />
                             </div>
                           </div>
@@ -177,7 +182,7 @@ export default async function ProjectDetailsPage() {
                         <div className="cta-one__icon">
                             <span className="icon-call" />
                             <div className="cta-one__shape-1">
-                            <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
+                            <Image src="/assets/images/shapes/cta-one-shape-1.png" alt="" width={100} height={100} />
                             </div>
                         </div>
                         <h3 className="cta-one__title">

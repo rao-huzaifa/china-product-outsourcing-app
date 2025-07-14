@@ -1,4 +1,5 @@
 import TestimonialSlider1 from "../../slider/TestimonialSlider1"
+import Image from 'next/image'
 
 export default function Testimonial() {
     return (
@@ -7,11 +8,8 @@ export default function Testimonial() {
         <section className="testimonial-one">
           <div className="container">
             <div className="testimonial-one__inner">
-              <div className="testimonial-one__img-one">
-                <img
-                  src="assets/images/testimonial/testimonial-one-img-1.jpg"
-                  alt=""
-                />
+              <div className="testimonial-one__img-one" style={{ width: '100%', maxWidth: 700, borderRadius: 24, overflow: 'hidden' }}>
+                <Image src="/assets/images/testimonial/testimonial-one-img-1.jpg" alt="" width={500} height={320} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '24px' }} />
               </div>
               <div className="section-title text-center">
                 <div className="section-title__tagline-box">

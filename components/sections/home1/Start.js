@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image'
 export default function Start() {
     return (
         <>
@@ -9,7 +10,7 @@ export default function Start() {
                     <div className="col-xl-4">
                     <div className="why-are-we__left">
                         <div className="why-are-we__img">
-                        <img src="assets/images/resources/why-are-we-img-1.jpg" alt="" />
+                        <Image src="/assets/images/resources/why-are-we-img-1.jpg" alt="" width={400} height={300} />
                         </div>
                     </div>
                     </div>
@@ -60,7 +61,7 @@ export default function Start() {
                         </li>
                         </ul>
                         <div className="why-are-we__img-2">
-                        <img src="assets/images/resources/why-are-we-img-2.jpg" alt="" />
+                        <Image src="/assets/images/resources/why-are-we-img-2.jpg" alt="" width={400} height={300} />
                         <div
                             className="why-are-we__year wow fadeInLeft"
                             data-wow-delay="300ms"

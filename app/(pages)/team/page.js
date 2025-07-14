@@ -1,6 +1,7 @@
 
 import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
+import Image from "next/image"
 export default function Home() {
 
     return (
@@ -15,7 +16,7 @@ export default function Home() {
                         <div className="col-xl-4 col-lg-6 col-md-6">
                         <div className="team-one__single">
                             <div className="team-one__img">
-                            <img src="assets/images/team/team-1-1.jpg" alt="" />
+                            <Image src="/assets/images/team/team-1-1.jpg" alt="" width={150} height={150} />
                             </div>
                             <div className="team-one__content">
                             <h3 className="team-one__title">
@@ -44,7 +45,7 @@ export default function Home() {
                         <div className="col-xl-4 col-lg-6 col-md-6">
                         <div className="team-one__single">
                             <div className="team-one__img">
-                            <img src="assets/images/team/team-1-2.jpg" alt="" />
+                            <Image src="/assets/images/team/team-1-2.jpg" alt="" width={150} height={150} />
                             </div>
                             <div className="team-one__content">
                             <h3 className="team-one__title">
@@ -73,7 +74,7 @@ export default function Home() {
                         <div className="col-xl-4 col-lg-6 col-md-6">
                         <div className="team-one__single">
                             <div className="team-one__img">
-                            <img src="assets/images/team/team-1-3.jpg" alt="" />
+                            <Image src="/assets/images/team/team-1-3.jpg" alt="" width={150} height={150} />
                             </div>
                             <div className="team-one__content">
                             <h3 className="team-one__title">
@@ -102,7 +103,7 @@ export default function Home() {
                         <div className="col-xl-4 col-lg-6 col-md-6">
                         <div className="team-one__single">
                             <div className="team-one__img">
-                            <img src="assets/images/team/team-1-4.jpg" alt="" />
+                            <Image src="/assets/images/team/team-1-4.jpg" alt="" width={150} height={150} />
                             </div>
                             <div className="team-one__content">
                             <h3 className="team-one__title">
@@ -131,7 +132,7 @@ export default function Home() {
                         <div className="col-xl-4 col-lg-6 col-md-6">
                         <div className="team-one__single">
                             <div className="team-one__img">
-                            <img src="assets/images/team/team-1-5.jpg" alt="" />
+                            <Image src="/assets/images/team/team-1-5.jpg" alt="" width={150} height={150} />
                             </div>
                             <div className="team-one__content">
                             <h3 className="team-one__title">
@@ -160,7 +161,7 @@ export default function Home() {
                         <div className="col-xl-4 col-lg-6 col-md-6">
                         <div className="team-one__single">
                             <div className="team-one__img">
-                            <img src="assets/images/team/team-1-6.jpg" alt="" />
+                            <Image src="/assets/images/team/team-1-6.jpg" alt="" width={150} height={150} />
                             </div>
                             <div className="team-one__content">
                             <h3 className="team-one__title">
@@ -204,7 +205,7 @@ export default function Home() {
                         <div className="cta-one__icon">
                             <span className="icon-call" />
                             <div className="cta-one__shape-1">
-                            <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
+                            <Image src="/assets/images/shapes/cta-one-shape-1.png" alt="" width={100} height={100} />
                             </div>
                         </div>
                         <h3 className="cta-one__title">

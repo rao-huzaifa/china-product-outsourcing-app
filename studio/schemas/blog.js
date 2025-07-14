@@ -57,6 +57,28 @@ export default {
       description: 'Images to show beside the main image in the blog card/layout',
     },
     {
+      name: 'cta',
+      title: 'Call to Action',
+      type: 'object',
+      fields: [
+        { name: 'title', title: 'CTA Title', type: 'string' },
+        { name: 'description', title: 'CTA Description', type: 'text' },
+        { name: 'phone', title: 'Phone', type: 'string' },
+        { name: 'website', title: 'Website', type: 'url' }
+      ]
+    },
+    {
+      name: 'features',
+      title: 'Features/Points List',
+      type: 'array',
+      of: [{ type: 'string' }]
+    },
+    {
+      name: 'logisticsSummary',
+      title: 'Logistics Summary',
+      type: 'text'
+    },
+    {
       name: 'authorName',
       title: 'Author Name (if not team member)',
       type: 'string',

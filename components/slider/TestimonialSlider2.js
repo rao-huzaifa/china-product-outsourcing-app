@@ -1,6 +1,7 @@
 'use client'
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import Image from 'next/image'
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -75,10 +76,7 @@ export default function TestimonialSlider2() {
                       audienceses gain{" "}
                     </p>
                     <div className="testimonial-two__client-img">
-                      <img
-                        src="assets/images/testimonial/testimonial-2-1.jpg"
-                        alt=""
-                      />
+                      <Image src="/assets/images/testimonial/testimonial-2-1.jpg" alt="Testimonial 2" width={100} height={100} />
                     </div>
                     <div className="testimonial-two__ratting">
                       <span className="icon-star" />
@@ -107,10 +105,7 @@ export default function TestimonialSlider2() {
                       audienceses gain{" "}
                     </p>
                     <div className="testimonial-two__client-img">
-                      <img
-                        src="assets/images/testimonial/testimonial-2-1.jpg"
-                        alt=""
-                      />
+                      <Image src="/assets/images/testimonial/testimonial-2-1.jpg" alt="Testimonial 2" width={100} height={100} />
                     </div>
                     <div className="testimonial-two__ratting">
                       <span className="icon-star" />
@@ -139,10 +134,7 @@ export default function TestimonialSlider2() {
                       audienceses gain{" "}
                     </p>
                     <div className="testimonial-two__client-img">
-                      <img
-                        src="assets/images/testimonial/testimonial-2-1.jpg"
-                        alt=""
-                      />
+                      <Image src="/assets/images/testimonial/testimonial-2-1.jpg" alt="Testimonial 2" width={100} height={100} />
                     </div>
                     <div className="testimonial-two__ratting">
                       <span className="icon-star" />

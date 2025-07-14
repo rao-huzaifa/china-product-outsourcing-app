@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image'
 
 export default function Footer2() {
     return (
@@ -6,7 +7,7 @@ export default function Footer2() {
             {/*Site Footer Start*/}
             <footer className="site-footer-two">
                 <div className="site-footer-two__shape-1">
-                <img src="assets/images/shapes/site-footer-two-shape-1.png" alt="" />
+                <Image src="/assets/images/shapes/site-footer-two-shape-1.png" alt="" width={100} height={100} />
                 </div>
                 <div className="container">
                 <div className="site-footer-two__top">
@@ -54,7 +55,7 @@ export default function Footer2() {
                         <div className="footer-widget-two__column footer-widget-two__about">
                         <div className="footer-widget-two__logo">
                             <Link href="/">
-                            <img src="assets/images/resources/footer-logo-2.png" alt="" />
+                            <Image src="/assets/images/resources/footer-logo-2.png" alt="REO Trades Footer Logo" width={180} height={60} />
                             </Link>
                         </div>
                         <p className="footer-widget-two__text">

@@ -4,6 +4,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { useEffect, useState } from 'react'
 import { createClient } from '@sanity/client'
+import Image from 'next/image'
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -80,8 +81,8 @@ export default function TeamSlider() {
                     <SwiperSlide className="swiper-slide" key={member.slug?.current || idx}>
                         <div className="team-one__single">
                             <div className="team-one__img">
-                                {member.image && member.image.asset ? (
-                                    <img src={member.image.asset.url} alt={member.name} />
+                                {member.image && member.image.asset && member.image.asset.url ? (
+                                    <Image src={member.image.asset.url} alt={member.name} width={200} height={200} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '50%' }} />
                                 ) : (
                                     <div style={{width:150, height:150, borderRadius:'50%', background:'#e5e5e5', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20}}>150X150</div>
                                 )}

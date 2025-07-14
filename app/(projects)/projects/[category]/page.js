@@ -1,6 +1,7 @@
 import Layout from "../../../../components/layout/Layout"
 import Link from "next/link"
 import { createClient } from '@sanity/client'
+import Image from "next/image"
 
 const sanity = createClient({
   projectId: 'hjoc1p23',
@@ -40,9 +41,11 @@ export default async function CategoryProjectsPage({ params }) {
                 >
                   <div className="project-two__single">
                     <div className="project-two__img">
-                      <img
+                      <Image
                         src={project.mainImage?.asset?.url || "/assets/images/project/project-2-1.jpg"}
                         alt={project.title}
+                        width={400}
+                        height={300}
                       />
                       <div className="project-two__content">
                         <p className="project-two__sub-title">{project.category?.title}</p>

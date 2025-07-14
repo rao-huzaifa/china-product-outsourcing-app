@@ -1,12 +1,26 @@
+'use client'
+import { useEffect, useState } from 'react'
+import { createClient } from '@sanity/client'
 import Link from "next/link"
+import Image from 'next/image'
 
 export default function Footer1() {
+    const [categories, setCategories] = useState([])
+    useEffect(() => {
+        const sanity = createClient({
+            projectId: 'hjoc1p23',
+            dataset: 'production',
+            apiVersion: '2024-07-08',
+            useCdn: true,
+        })
+        sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`).then(setCategories)
+    }, [])
     return (
         <>
         {/*Site Footer Start*/}
         <footer className="site-footer">
             <div className="site-footer__shape-1 float-bob-y">
-            <img src="assets/images/shapes/footer-shape-1.png" alt="" />
+            <Image src="/assets/images/shapes/footer-shape-1.png" alt="" width={100} height={100} />
             </div>
             <div className="site-footer__top">
             <div className="container">
@@ -90,40 +104,30 @@ export default function Footer1() {
                     >
                     <div className="footer-widget__column footer-widget__services">
                         <div className="footer-widget__title-box">
-                        <h3 className="footer-widget__title">Services</h3>
+                        <h3 className="footer-widget__title">Projects</h3>
                         </div>
-                        <ul className="footer-widget__services-list list-unstyled">
-                        <li>
-                            <Link href="/express-freight-solutions">
-                            <span className="icon-angle-left" />
-                            Express Freight Solutions
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/speedy-dispatch">
-                            <span className="icon-angle-left" />
-                            Rapid Delivery Services
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/speedy-dispatch">
-                            <span className="icon-angle-left" />
-                            Speedy Haulage
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/swift-supply-chain">
-                            <span className="icon-angle-left" />
-                            Reliable Transporters
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/swift-supply-chain">
-                            <span className="icon-angle-left" />
-                            Swift Ship Solutions
-                            </Link>
-                        </li>
-                        </ul>
+                        {categories.length > 0 ? (
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
+                                {[0, 1].map(col => (
+                                    <ul key={col} className="footer-widget__services-list list-unstyled" style={{ flex: 1, minWidth: 0 }}>
+                                        {categories
+                                            .filter((_, idx) => idx % 2 === col)
+                                            .map(cat => (
+                                                <li key={cat.slug.current}>
+                                                    <Link href={`/projects/${cat.slug.current}`}>
+                                                        <span className="icon-angle-left" />
+                                                        {cat.title}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                    </ul>
+                                ))}
+                            </div>
+                        ) : (
+                            <ul className="footer-widget__services-list list-unstyled">
+                                <li>Loading...</li>
+                            </ul>
+                        )}
                     </div>
                     </div>
                     <div
@@ -167,17 +171,20 @@ export default function Footer1() {
             <div className="container">
                 <div className="site-footer__bottom-inner">
                 <p className="site-footer__bottom-text">
-                    © Yoursitename 2024 | All Rights Reserved
+                    © REO Trades 2024 | All Rights Reserved<br />
+                    <span style={{ fontSize: '0.95em', color: '#aaa' }}>
+                        Design & Marketing by <a href="https://reorank.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>REO Rank</a>
+                    </span>
                 </p>
                 <ul className="list-unstyled site-footer__bottom-menu">
                     <li>
-                    <Link href="/about">Trams &amp; Condition</Link>
+                        <Link href="/terms">Terms &amp; Conditions</Link>
                     </li>
                     <li>
-                    <Link href="/about">Privacy Policy</Link>
+                        <Link href="/privacy">Privacy Policy</Link>
                     </li>
                     <li>
-                    <Link href="/contact">Contact Us</Link>
+                        <Link href="/contact">Contact Us</Link>
                     </li>
                 </ul>
                 </div>

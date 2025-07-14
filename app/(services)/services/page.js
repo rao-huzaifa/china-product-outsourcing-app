@@ -2,6 +2,7 @@
 import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
 import { useState } from 'react'
+import Image from 'next/image'
 export default function Home() {
    
 
@@ -240,7 +241,7 @@ export default function Home() {
                             <div className="cta-one__icon">
                                 <span className="icon-call" />
                                 <div className="cta-one__shape-1">
-                                <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
+                                <Image src="/assets/images/shapes/cta-one-shape-1.png" alt="" width={100} height={100} />
                                 </div>
                             </div>
                             <h3 className="cta-one__title">
