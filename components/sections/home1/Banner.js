@@ -47,7 +47,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} priority />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
@@ -99,7 +99,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} priority />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
@@ -151,7 +151,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} priority />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
@@ -203,7 +203,7 @@ export default function Banner() {
                       <div className="main-slider__content">
                         <div className="main-slider__sub-title-box">
                           <div className="main-slider__sub-title-icon">
-                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} />
+                            <Image src="/assets/images/icon/main-slider-sub-title-icon.png" alt="" width={40} height={40} style={{ width: 'auto', height: '40px' }} priority />
                           </div>
                           <p className="main-slider__sub-title">Your Trusted China Sourcing Partner</p>
                         </div>
