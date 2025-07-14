@@ -79,9 +79,9 @@ export default function Home() {
                                     <div className="blog-page__single" key={blog._id || idx} style={{ opacity: 0, animation: `fadeIn 0.7s ${idx * 0.1}s forwards` }}>
                                         <div className="blog-page__img">
                                             {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
-                                                <Image src={blog.mainImage.asset.url.startsWith('/') ? blog.mainImage.asset.url : '/' + blog.mainImage.asset.url} alt={blog.title} width={400} height={300} />
+                                                <Image src={blog.mainImage.asset.url} alt={blog.title} width={800} height={500} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} />
                                             ) : (
-                                                <Image src="/assets/images/blog/blog-page-1-1.jpg" alt="" width={400} height={300} />
+                                                <Image src="/assets/images/blog/blog-page-1-1.jpg" alt="" width={400} height={300} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} />
                                             )}
                                             <div className="blog-page__date">
                                                 <p>{blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '29 jan 2024'}</p>
@@ -144,9 +144,9 @@ export default function Home() {
                                                 <li key={blog._id || idx}>
                                                     <div className="sidebar__post-image">
                                                         {blog.mainImage && blog.mainImage.asset && blog.mainImage.asset.url ? (
-                                                            <Image src={blog.mainImage.asset.url.startsWith('/') ? blog.mainImage.asset.url : '/' + blog.mainImage.asset.url} alt={blog.title} width={100} height={100} />
+                                                            <Image src={blog.mainImage.asset.url} alt={blog.title} width={100} height={100} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: 12 }} />
                                                         ) : (
-                                                            <Image src="/assets/images/blog/lp-1-1.jpg" alt="" width={100} height={100} />
+                                                            <Image src="/assets/images/blog/lp-1-1.jpg" alt="" width={100} height={100} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: 12 }} />
                                                         )}
                                                     </div>
                                                     <div className="sidebar__post-content">
