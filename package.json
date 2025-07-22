@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build:studio": "cd studio && sanity build && rm -rf ../public/studio && cp -R dist ../public/studio && rm -rf ../public/static && cp -R dist/static ../public/static"
+    "lint": "next lint"
   },
   "babel": {
     "presets": [

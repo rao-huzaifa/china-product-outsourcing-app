@@ -6,7 +6,6 @@ import Cta from '../../components/sections/home1/Cta';
 import { useState } from 'react';
 import Layout from '../../components/layout/Layout';
 import Project from '../../components/sections/home1/Project';
-import '../../styles/about-unified.css';
 
 function SectionWrapper({ children, className = '', bg = '', divider = false, style = {} }) {
   return (
