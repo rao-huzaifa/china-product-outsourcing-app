@@ -10,7 +10,7 @@ export default function WhyChoose() {
                     <div className="why-choose-one__left">
                         <div className="section-title text-left">
                         <div className="section-title__tagline-box">
-                            <span className="section-title__tagline">Why Choose REO Trades?</span>
+                            <span className="section-title__tagline">Why Choose Door to Doors?</span>
                         </div>
                         <h2 className="section-title__title">
                             Your Strategic Partner for Seamless China Sourcing
@@ -18,7 +18,7 @@ export default function WhyChoose() {
                         </div>
                         <p className="why-choose-one__text">
                             As your strategic manufacturing partner, we make importing from China simple, cost-effective, and reliable.<br />
-                            Whether you&apos;re a small business or a large enterprise, REO Trades delivers customized solutions to meet your unique needs.
+                            Whether you&apos;re a small business or a large enterprise, Door to Doors delivers customized solutions to meet your unique needs.
                         </p>
                         <div className="why-choose-one__offer-list" style={{marginTop: '1.5rem', marginBottom: '1.5rem'}}>
                             <h3 className="why-choose-one__offer-title" style={{fontWeight: 'bold', marginBottom: '1rem'}}>What We Offer:</h3>

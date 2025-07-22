@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from 'next/image'
 import { useState } from 'react'
+import { createSanityDocument } from '../../lib/sanity'
 
 export default function Sidebar({ isSidebar, handleSidebar }) {
     const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -24,7 +25,7 @@ export default function Sidebar({ isSidebar, handleSidebar }) {
         }
         // Simulate API call (replace with real endpoint if needed)
         try {
-            await new Promise(res => setTimeout(res, 1000))
+            await createSanityDocument('sidebarQuoteSubmission', form)
             setStatus('success')
             setForm({ name: '', email: '', message: '' })
         } catch (err) {
@@ -50,13 +51,13 @@ export default function Sidebar({ isSidebar, handleSidebar }) {
                         <div className="content-inner">
                         <div className="logo">
                             <Link href="/">
-                            <Image src="/assets/images/resources/footer-logo-1.png" width={150} height={50} alt="REO Trades Logo" />
+                            <Image src="/assets/images/resources/for blackbg logo.png" width={150} height={50} alt="Door to Doors Logo" />
                             </Link>
                         </div>
                         <div className="content-box">
                             <h4>About Us</h4>
                             <p>
-                            REO Trades is your trusted partner for seamless China sourcing and manufacturing solutions. We connect businesses worldwide with China&apos;s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind throughout your product journey.
+                            Door to Doors is your trusted partner for seamless China sourcing and manufacturing solutions. We connect businesses worldwide with China&apos;s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind throughout your product journey.
                             </p>
                         </div>
                         <div className="form-inner">

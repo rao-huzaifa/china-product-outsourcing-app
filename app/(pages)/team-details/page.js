@@ -1,8 +1,39 @@
+'use client'
 import React from 'react';
 import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from 'react'
+import { createSanityDocument } from '../../../lib/sanity'
 export default function Home() {
+
+    const [form, setForm] = useState({ name: '', email: '', website: '', message: '' })
+    const [status, setStatus] = useState('idle')
+    const [error, setError] = useState('')
+
+    const handleChange = e => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+        setError('')
+    }
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+        setStatus('loading')
+        setError('')
+        if (!form.name || !form.email || !form.message) {
+            setError('Please fill in all required fields.')
+            setStatus('idle')
+            return
+        }
+        try {
+            await createSanityDocument('teamContactSubmission', form)
+            setStatus('success')
+            setForm({ name: '', email: '', website: '', message: '' })
+        } catch (err) {
+            setStatus('error')
+            setError('Something went wrong. Please try again.')
+        }
+    }
 
     return (
         <>
@@ -192,47 +223,41 @@ export default function Home() {
                             Your email address will not be published. Required fields are marked
                             *
                         </p>
-                        <form
-                            action="assets/inc/sendemail.php"
-                            className="team-details__form contact-form-validated"
-                            noValidate="novalidate"
-                        >
+                        <form onSubmit={handleSubmit} className="team-details__form contact-form-validated" noValidate>
                             <div className="row">
                             <div className="col-xl-6 col-lg-6">
                                 <div className="team-details__input-box">
-                                <input type="text" placeholder="Your Name*" name="name" />
+                                <input type="text" placeholder="Your Name*" name="name" value={form.name} onChange={handleChange} required />
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6">
                                 <div className="team-details__input-box">
-                                <input type="email" placeholder="Your Email*" name="email" />
+                                <input type="email" placeholder="Your Email*" name="email" value={form.email} onChange={handleChange} required />
                                 </div>
                             </div>
                             <div className="col-xl-12">
                                 <div className="team-details__input-box">
-                                <input type="text" placeholder="Website*" name="email" />
+                                <input type="text" placeholder="Website*" name="website" value={form.website} onChange={handleChange} />
                                 </div>
                             </div>
                             </div>
                             <div className="row">
                             <div className="col-xl-12">
                                 <div className="team-details__input-box text-message-box">
-                                <textarea
-                                    name="message"
-                                    placeholder="Write Message*"
-                                    defaultValue={""}
-                                />
+                                <textarea name="message" placeholder="Write Message*" value={form.message} onChange={handleChange} required />
                                 </div>
                                 <div className="contact-two__btn-box">
-                                <button type="submit" className="thm-btn team-details__btn">
-                                    Send Your Message
+                                <button type="submit" className="thm-btn team-details__btn" disabled={status==='loading'}>
+                                    {status==='loading' ? 'Submitting...' : 'Send Your Message'}
                                     <span />
                                 </button>
                                 </div>
+                                {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
+                                {status==='success' && <div style={{ color: 'green', marginTop: 8 }}>Thank you! We will contact you soon.</div>}
+                                {status==='error' && <div style={{ color: 'red', marginTop: 8 }}>Something went wrong. Please try again.</div>}
                             </div>
                             </div>
                         </form>
-                        <div className="result" />
                         </div>
                     </div>
                     </div>

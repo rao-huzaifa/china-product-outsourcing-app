@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link"
 import { useState } from 'react'
+import { createSanityDocument } from '../../../lib/sanity'
 export default function Faq() {
     const [isActive, setIsActive] = useState({
         status: false,
@@ -19,6 +20,34 @@ export default function Faq() {
             })
         }
     }
+
+    const [form, setForm] = useState({ name: '', email: '', phone: '', serviceType: '', message: '' })
+    const [status, setStatus] = useState('idle')
+    const [error, setError] = useState('')
+
+    const handleChange = e => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+        setError('')
+    }
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+        setStatus('loading')
+        setError('')
+        if (!form.name || !form.email || !form.message) {
+            setError('Please fill in all required fields.')
+            setStatus('idle')
+            return
+        }
+        try {
+            await createSanityDocument('faqSubmission', form)
+            setStatus('success')
+            setForm({ name: '', email: '', phone: '', serviceType: '', message: '' })
+        } catch (err) {
+            setStatus('error')
+            setError('Something went wrong. Please try again.')
+        }
+    }
     return (
         <>
             {/*FAQ One Start*/}
@@ -33,7 +62,7 @@ export default function Faq() {
                                         <span className="section-title__tagline">FAQ</span>
                                     </div>
                                     <h2 className="section-title__title">
-                                        Frequently Asked Questions<br />About REO Trades Sourcing
+                                        Frequently Asked Questions<br />About Door to Doors Sourcing
                                     </h2>
                                 </div>
                                 <div
@@ -42,7 +71,7 @@ export default function Faq() {
                                     >
                                     <div className={isActive.key == 1 ? "accrodion active" : "accrodion"} onClick={() => handleToggle(1)}>
                                         <div className="accrodion-title">
-                                        <h4>How does REO Trades ensure product quality?</h4>
+                                        <h4>How does Door to Doors ensure product quality?</h4>
                                         </div>
                                         <div className={isActive.key == 1 ? "accrodion-content current" : "accrodion-content"}>
                                             <div className="inner">
@@ -68,7 +97,7 @@ export default function Faq() {
                                     </div>
                                     <div className={isActive.key == 3 ? "accrodion active" : "accrodion"} onClick={() => handleToggle(3)}>
                                         <div className="accrodion-title">
-                                        <h4>Can REO Trades handle both small and large orders?</h4>
+                                        <h4>Can Door to Doors handle both small and large orders?</h4>
                                         </div>
                                         <div className={isActive.key == 3 ? "accrodion-content current" : "accrodion-content"}>
                                             <div className="inner">
@@ -129,48 +158,28 @@ export default function Faq() {
                             <h3 className="faq-one__from-title">
                             Our One-Stop Car Repair Shop
                             </h3>
-                            <form
-                            className="contact-form-validated faq-one__form"
-                            action="assets/inc/sendemail.php"
-                            method="post"
-                            noValidate="novalidate"
-                            >
+                            <form onSubmit={handleSubmit} className="contact-form-validated faq-one__form" noValidate>
                             <div className="row">
                                 <div className="col-xl-6 col-lg-6">
                                 <div className="faq-one__input-box">
-                                    <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Your Name"
-                                    required=""
-                                    />
+                                    <input type="text" name="name" placeholder="Your Name" value={form.name} onChange={handleChange} required />
                                 </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6">
                                 <div className="faq-one__input-box">
-                                    <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Your Email"
-                                    required=""
-                                    />
+                                    <input type="email" name="email" placeholder="Your Email" value={form.email} onChange={handleChange} required />
                                 </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6">
                                 <div className="faq-one__input-box">
-                                    <input
-                                    type="text"
-                                    name="text"
-                                    placeholder="Phone Number"
-                                    required=""
-                                    />
+                                    <input type="text" name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange} />
                                 </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6">
                                 <div className="faq-one__input-box">
                                     <div className="select-box">
-                                        <select defaultValue="Choose a Option" className="selectmenu wide">
-                                            <option>Choose a Option</option>
+                                        <select name="serviceType" value={form.serviceType} onChange={handleChange} className="selectmenu wide">
+                                            <option value="">Choose a Option</option>
                                             <option>Type Of Service 01</option>
                                             <option>Type Of Service 02</option>
                                             <option>Type Of Service 03</option>
@@ -183,24 +192,22 @@ export default function Faq() {
                                 </div>
                                 <div className="col-xl-12">
                                 <div className="faq-one__input-box text-message-box">
-                                    <textarea
-                                    name="message"
-                                    placeholder="Message here.."
-                                    defaultValue={""}
-                                    />
+                                    <textarea name="message" placeholder="Message here.." value={form.message} onChange={handleChange} required />
                                 </div>
                                 </div>
-                                <div className=" col-xl-12">
+                                <div className="col-xl-12">
                                 <div className="faq-one__btn-box">
-                                    <button type="submit" className="thm-btn faq-one__btn">
-                                    Submit Now
+                                    <button type="submit" className="thm-btn faq-one__btn" disabled={status==='loading'}>
+                                    {status==='loading' ? 'Submitting...' : 'Submit Now'}
                                     <span />
                                     </button>
                                 </div>
                                 </div>
+                                {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
+                                {status==='success' && <div style={{ color: 'green', marginTop: 8 }}>Thank you! We will contact you soon.</div>}
+                                {status==='error' && <div style={{ color: 'red', marginTop: 8 }}>Something went wrong. Please try again.</div>}
                             </div>
                             </form>
-                            <div className="result" />
                         </div>
                         </div>
                     </div>

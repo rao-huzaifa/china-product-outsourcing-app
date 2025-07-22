@@ -13,7 +13,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                 <div className="main-menu__left">
                   <div className="main-menu__logo">
                     <Link href="/">
-                      <Image src="/assets/images/resources/logo-1.png" alt="REO Trades Logo" width={180} height={60} />
+                      <Image src="/assets/images/resources/for whitebg logo.png" alt="Door to Doors Logo" width={180} height={60} />
                     </Link>
                   </div>
                   <div className="main-menu__main-menu-box">
@@ -57,7 +57,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                 <div className="main-menu__left">
                   <div className="main-menu__logo">
                     <Link href="/">
-                      <Image src="/assets/images/resources/logo-1.png" alt="REO Trades Logo" width={180} height={60} />
+                      <Image src="/assets/images/resources/for whitebg logo.png" alt="Door to Doors Logo" width={180} height={60} />
                     </Link>
                   </div>
                   <div className="main-menu__main-menu-box">

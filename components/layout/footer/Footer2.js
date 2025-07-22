@@ -1,7 +1,37 @@
 import Link from "next/link"
 import Image from 'next/image'
+import { useState } from 'react'
+import { createSanityDocument } from '../../../lib/sanity'
 
 export default function Footer2() {
+    const [form, setForm] = useState({ email: '' })
+    const [status, setStatus] = useState('idle')
+    const [error, setError] = useState('')
+
+    const handleChange = e => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+        setError('')
+    }
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+        setStatus('loading')
+        setError('')
+        if (!form.email) {
+            setError('Please enter your email.')
+            setStatus('idle')
+            return
+        }
+        try {
+            await createSanityDocument('newsletterSubscription', form)
+            setStatus('success')
+            setForm({ email: '' })
+        } catch (err) {
+            setStatus('error')
+            setError('Something went wrong. Please try again.')
+        }
+    }
+
     return (
         <>
             {/*Site Footer Start*/}
@@ -21,27 +51,19 @@ export default function Footer2() {
                     </div>
                     <div className="col-xl-8">
                         <div className="site-footer-two__top-right">
-                        <form
-                            className="footer-widget-two__newsletter-form mc-form"
-                            data-url="MC_FORM_URL"
-                            noValidate="novalidate"
-                        >
+                        <form onSubmit={handleSubmit} className="footer-widget-two__newsletter-form mc-form" noValidate>
                             <div className="footer-widget-two__newsletter-form-input-box">
-                            <input
-                                type="email"
-                                placeholder="Enter Your Email"
-                                name="EMAIL"
-                            />
-                            <button
-                                type="submit"
-                                className="footer-widget-two__newsletter-btn thm-btn"
-                            >
+                            <input type="email" placeholder="Enter Your Email" name="email" value={form.email} onChange={handleChange} required />
+                            <button type="submit" className="footer-widget-two__newsletter-btn thm-btn" disabled={status==='loading'}>
                                 Subscribe Now
                                 <span />
                             </button>
                             </div>
                         </form>
                         <div className="mc-form__response" />
+                        {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
+                        {status==='success' && <div style={{ color: 'green', marginTop: 8 }}>Thank you for subscribing!</div>}
+                        {status==='error' && <div style={{ color: 'red', marginTop: 8 }}>Something went wrong. Please try again.</div>}
                         </div>
                     </div>
                     </div>
@@ -55,7 +77,7 @@ export default function Footer2() {
                         <div className="footer-widget-two__column footer-widget-two__about">
                         <div className="footer-widget-two__logo">
                             <Link href="/">
-                            <Image src="/assets/images/resources/footer-logo-2.png" alt="REO Trades Footer Logo" width={180} height={60} />
+                            <Image src="/assets/images/resources/for blackbg logo.png" alt="Door to Doors Footer Logo" width={180} height={60} />
                             </Link>
                         </div>
                         <p className="footer-widget-two__text">

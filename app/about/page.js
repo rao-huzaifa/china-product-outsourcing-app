@@ -40,15 +40,15 @@ function FounderNote() {
             </div>
             <blockquote className="founder-note__blockquote mb-4" style={{fontSize: '1.15rem', lineHeight: 1.7, color: '#222'}}>
               Dear Valued Partners and Future Collaborators,<br /><br />
-              When we founded REO Trades, our goal was to transform how businesses approach sourcing and manufacturing in China. As someone who has tackled the complexities of global trade, I know firsthand the challenges you face.<br /><br />
-              REO Trades is not just another sourcing agent; we’re your competitive edge in a dynamic market. Our team’s expertise spans industries like chemicals, textiles, automobiles, and more, ensuring we deliver excellence at every stage. We prioritize transparency, reliability, and innovation, eliminating intermediaries to provide you with the best value. Our “fail fast” approach empowers you to innovate with minimal risk.<br /><br />
-              Whether you’re a startup launching your first product or an established company optimizing your supply chain, REO Trades is here to guide you. We don&apos;t just deliver products – we deliver confidence and success.<br /><br />
+              When we founded Door to Doors, our goal was to transform how businesses approach sourcing and manufacturing in China. As someone who has tackled the complexities of global trade, I know firsthand the challenges you face.<br /><br />
+              Door to Doors is not just another sourcing agent; we’re your competitive edge in a dynamic market. Our team’s expertise spans industries like chemicals, textiles, automobiles, and more, ensuring we deliver excellence at every stage. We prioritize transparency, reliability, and innovation, eliminating intermediaries to provide you with the best value. Our “fail fast” approach empowers you to innovate with minimal risk.<br /><br />
+              Whether you’re a startup launching your first product or an established company optimizing your supply chain, Door to Doors is here to guide you. We don&apos;t just deliver products – we deliver confidence and success.<br /><br />
               Join us in redefining China sourcing. Let&apos;s turn your manufacturing challenges into opportunities for growth.
             </blockquote>
             <div className="about-one__signature mt-4" style={{borderTop: '1px solid #eee', paddingTop: '1rem'}}>
               <span style={{fontFamily: 'cursive', fontSize: '1.2rem', color: '#0d6efd'}}>Looking forward to partnering with you,</span><br />
               <span className="about-one__name" style={{fontWeight: 600}}>Haibat Khan</span><br />
-              <span className="about-one__role" style={{color: '#888'}}>Co-Founder, REO Trades</span>
+              <span className="about-one__role" style={{color: '#888'}}>Co-Founder, Door to Doors</span>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ function MissionCommitment() {
   };
   const commitment = {
     title: 'Our Commitment',
-    desc: 'At REO Trades, your success is our priority. We treat your projects with the care and dedication we’d give our own, understanding the vision and hard work behind every product. Your success defines ours, and we’re committed to helping you achieve your manufacturing goals.',
+    desc: 'At Door to Doors, your success is our priority. We treat your projects with the care and dedication we’d give our own, understanding the vision and hard work behind every product. Your success defines ours, and we’re committed to helping you achieve your manufacturing goals.',
     icon: 'icon-heart',
   };
   return (
@@ -171,7 +171,7 @@ function Features() {
         <div className="section-title__tagline-box">
           <span className="section-title__tagline">What Sets Us Apart</span>
         </div>
-        <h2 className="section-title__title">The REO Trades Difference</h2>
+        <h2 className="section-title__title">The Door to Doors Difference</h2>
       </div>
       <div className="row g-4">
         {features.map((feature, idx) => (

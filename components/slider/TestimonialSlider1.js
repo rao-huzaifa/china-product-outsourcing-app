@@ -119,7 +119,7 @@ export default function TestimonialSlider1() {
                                 <h3 className="testimonial-one__client-name">Emily Chen</h3>
                                 <p className="testimonial-one__client-sub-title">Supply Chain Manager</p>
                                 <p className="testimonial-one__text">
-                                    REO Trades made sourcing from China effortless. Their team managed everything from manufacturer selection to final delivery. We received our products on time and in perfect condition.
+                                    Door to Doors made sourcing from China effortless. Their team managed everything from manufacturer selection to final delivery. We received our products on time and in perfect condition.
                                 </p>
                             </div>
                         </SwiperSlide>
@@ -146,7 +146,7 @@ export default function TestimonialSlider1() {
                                 <h3 className="testimonial-one__client-name">David Lee</h3>
                                 <p className="testimonial-one__client-sub-title">CEO</p>
                                 <p className="testimonial-one__text">
-                                    The quality control and transparency REO Trades provided were outstanding. We felt confident every step of the way.
+                                    The quality control and transparency Door to Doors provided were outstanding. We felt confident every step of the way.
                                 </p>
                             </div>
                         </SwiperSlide>
@@ -173,7 +173,7 @@ export default function TestimonialSlider1() {
                                 <h3 className="testimonial-one__client-name">Sarah Patel</h3>
                                 <p className="testimonial-one__client-sub-title">Operations Director</p>
                                 <p className="testimonial-one__text">
-                                    REO Trades’s expertise in navigating Chinese regulations saved us time and money. Highly recommended for any business importing from China.
+                                    Door to Doors’s expertise in navigating Chinese regulations saved us time and money. Highly recommended for any business importing from China.
                                 </p>
                             </div>
                         </SwiperSlide>

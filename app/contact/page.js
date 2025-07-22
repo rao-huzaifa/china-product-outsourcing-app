@@ -1,7 +1,37 @@
+'use client'
 
 import Layout from "../../components/layout/Layout"
 import Link from "next/link"
+import { useState } from 'react'
+import { createSanityDocument } from '../../lib/sanity'
 export default function Home() {
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [error, setError] = useState('')
+
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+    setError('')
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setStatus('loading')
+    setError('')
+    if (!form.name || !form.email || !form.message) {
+      setError('Please fill in all required fields.')
+      setStatus('idle')
+      return
+    }
+    try {
+      await createSanityDocument('contactSubmission', form)
+      setStatus('success')
+      setForm({ name: '', email: '', subject: '', message: '' })
+    } catch (err) {
+      setStatus('error')
+      setError('Something went wrong. Please try again.')
+    }
+  }
 
     return (
         <>
@@ -80,63 +110,41 @@ export default function Home() {
                                 </div>
                                 <h2 className="section-title__title">Get Touch Here</h2>
                                 </div>
-                                <form
-                                className="contact-form-validated contact-two__form"
-                                action="assets/inc/sendemail.php"
-                                method="post"
-                                noValidate="novalidate"
-                                >
+                                <form onSubmit={handleSubmit} className="contact-form-validated contact-two__form" noValidate>
                                 <div className="row">
                                     <div className="col-xl-6 col-lg-6">
                                     <div className="contact-two__input-box">
-                                        <input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Name"
-                                        required=""
-                                        />
+                                        <input type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
                                     </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6">
                                     <div className="contact-two__input-box">
-                                        <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="E-mail"
-                                        required=""
-                                        />
+                                        <input type="email" name="email" placeholder="E-mail" value={form.email} onChange={handleChange} required />
                                     </div>
                                     </div>
                                     <div className="col-xl-12 col-lg-12">
                                     <div className="contact-two__input-box">
-                                        <input
-                                        type="text"
-                                        name="text"
-                                        placeholder="Subject"
-                                        required=""
-                                        />
+                                        <input type="text" name="subject" placeholder="Subject" value={form.subject} onChange={handleChange} />
                                     </div>
                                     </div>
                                     <div className="col-xl-12">
                                     <div className="contact-two__input-box text-message-box">
-                                        <textarea
-                                        name="message"
-                                        placeholder="Message"
-                                        defaultValue={""}
-                                        />
+                                        <textarea name="message" placeholder="Message" value={form.message} onChange={handleChange} required />
                                     </div>
                                     </div>
-                                    <div className=" col-xl-12">
+                                    <div className="col-xl-12">
                                     <div className="contact-two__btn-box">
-                                        <button type="submit" className="thm-btn contact-two__btn">
-                                        Submit Now
+                                        <button type="submit" className="thm-btn contact-two__btn" disabled={status==='loading'}>
+                                        {status==='loading' ? 'Submitting...' : 'Submit Now'}
                                         <span />
                                         </button>
                                     </div>
                                     </div>
                                 </div>
                                 </form>
-                                <div className="result" />
+                                {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
+                                {status==='success' && <div style={{ color: 'green', marginTop: 8 }}>Thank you! We will contact you soon.</div>}
+                                {status==='error' && <div style={{ color: 'red', marginTop: 8 }}>Something went wrong. Please try again.</div>}
                             </div>
                             </div>
                             <div className="col-xl-5">

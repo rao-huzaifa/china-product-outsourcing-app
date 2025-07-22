@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@sanity/client'
 import Link from "next/link"
 import Image from 'next/image'
+import { createSanityDocument } from '../../../lib/sanity'
 
 export default function Footer1() {
     const [categories, setCategories] = useState([])
@@ -15,6 +16,35 @@ export default function Footer1() {
         })
         sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`).then(setCategories)
     }, [])
+
+    const [form, setForm] = useState({ email: '' })
+    const [status, setStatus] = useState('idle')
+    const [error, setError] = useState('')
+
+    const handleChange = e => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+        setError('')
+    }
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+        setStatus('loading')
+        setError('')
+        if (!form.email) {
+            setError('Please enter your email.')
+            setStatus('idle')
+            return
+        }
+        try {
+            await createSanityDocument('newsletterSubscription', form)
+            setStatus('success')
+            setForm({ email: '' })
+        } catch (err) {
+            setStatus('error')
+            setError('Something went wrong. Please try again.')
+        }
+    }
+
     return (
         <>
         {/*Site Footer Start*/}
@@ -33,9 +63,11 @@ export default function Footer1() {
                     <div className="footer-widget__column footer-widget__about">
                         <div className="footer-widget__logo">
                         <Link href="/">
-                            <img
-                            src="assets/images/resources/footer-logo-1.png"
-                            alt=""
+                            <Image
+                            src="/assets/images/resources/for blackbg logo.png"
+                            alt="Door to Doors Logo"
+                            width={180}
+                            height={60}
                             />
                         </Link>
                         </div>
@@ -141,24 +173,16 @@ export default function Footer1() {
                         <p className="footer-widget__newsletter-text">
                         Financial planners help people to gain knowledge aboutw
                         </p>
-                        <form
-                        className="footer-widget__newsletter-form mc-form"
-                        data-url="MC_FORM_URL"
-                        noValidate="novalidate"
-                        >
-                        <div className="footer-widget__newsletter-form-input-box">
-                            <input
-                            type="email"
-                            placeholder="Your e-mail"
-                            name="EMAIL"
-                            />
-                            <button
-                            type="submit"
-                            className="footer-widget__newsletter-btn"
-                            >
-                            <span className="icon-paper-plane" />
-                            </button>
-                        </div>
+                        <form onSubmit={handleSubmit} className="footer-widget__newsletter-form mc-form" noValidate>
+                            <div className="footer-widget__newsletter-form-input-box">
+                                <input type="email" placeholder="Your e-mail" name="email" value={form.email} onChange={handleChange} required />
+                                <button type="submit" className="footer-widget__newsletter-btn" disabled={status==='loading'}>
+                                    <span className="icon-paper-plane" />
+                                </button>
+                            </div>
+                            {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
+                            {status==='success' && <div style={{ color: 'green', marginTop: 8 }}>Thank you for subscribing!</div>}
+                            {status==='error' && <div style={{ color: 'red', marginTop: 8 }}>Something went wrong. Please try again.</div>}
                         </form>
                         <div className="mc-form__response" />
                     </div>
@@ -171,7 +195,7 @@ export default function Footer1() {
             <div className="container">
                 <div className="site-footer__bottom-inner">
                 <p className="site-footer__bottom-text">
-                    © REO Trades 2024 | All Rights Reserved<br />
+                    © Door to Doors 2024 | All Rights Reserved<br />
                     <span style={{ fontSize: '0.95em', color: '#aaa' }}>
                         Design & Marketing by <a href="https://reorank.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>REO Rank</a>
                     </span>

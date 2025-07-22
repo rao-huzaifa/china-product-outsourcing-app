@@ -11,7 +11,7 @@ const ChatbotEnhanced = () => {
     const [messages, setMessages] = useState([
         {
             type: 'bot',
-            content: '👋 Hello! I\'m your REO Trades AI assistant. I can help you with:\n\n• Information about our services\n• Technical details about our webapp\n• Project inquiries\n• Team information\n• General questions\n\nWhat would you like to know?',
+            content: '👋 Hello! I\'m your Door to Doors AI assistant. I can help you with:\n\n• Information about our services\n• Technical details about our webapp\n• Project inquiries\n• Team information\n• General questions\n\nWhat would you like to know?',
             timestamp: new Date().toLocaleTimeString()
         }
     ])
@@ -45,10 +45,10 @@ const ChatbotEnhanced = () => {
     }, [])
 
     const onPointContext = `
-    You are an AI assistant for REO Trades, a trusted China sourcing and manufacturing partner. Here is accurate information about REO Trades:
+    You are an AI assistant for Door to Doors, a trusted China sourcing and manufacturing partner. Here is accurate information about Door to Doors:
 
     COMPANY OVERVIEW:
-    REO Trades is your strategic partner for seamless sourcing from China, managed by industry experts. We connect businesses worldwide with China’s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind. Founded by experts driven by innovation and efficiency, REO Trades is a leader in China sourcing. We manage every step of your product’s journey, from manufacturer selection to delivery. Our mission is to empower businesses of all sizes with seamless access to China’s manufacturing expertise, helping them bring product visions to life efficiently and cost-effectively. Our commitment is your success. We treat your projects with care and dedication, understanding the vision and hard work behind every product.
+    Door to Doors is your strategic partner for seamless sourcing from China, managed by industry experts. We connect businesses worldwide with China’s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind. Founded by experts driven by innovation and efficiency, Door to Doors is a leader in China sourcing. We manage every step of your product’s journey, from manufacturer selection to delivery. Our mission is to empower businesses of all sizes with seamless access to China’s manufacturing expertise, helping them bring product visions to life efficiently and cost-effectively. Our commitment is your success. We treat your projects with care and dedication, understanding the vision and hard work behind every product.
 
     CONTACT INFORMATION:
     Our main email is debra.holt@example.com. You can call us at (307) 555-0133 or 0192584341342. Our address is 3891 Ranchview Dr. Richardson. If a user needs to speak to a real person or has a question only a human can answer, offer the email address and suggest they contact the team directly.
@@ -69,7 +69,7 @@ const ChatbotEnhanced = () => {
     We work with startups, SMEs, and global corporations seeking reliable China sourcing, as well as businesses needing custom manufacturing, quality control, and logistics.
 
     RESPONSE GUIDELINES:
-    Only answer questions about REO Trades’s sourcing, manufacturing, logistics, and related services. If asked about web development, SEO, or unrelated digital services, clarify that REO Trades specializes in China sourcing and manufacturing solutions. Be helpful, professional, and concise. Use a friendly, expert tone. If asked about pricing, guide users to contact the team directly. If a user needs a real person, offer the contact email and suggest reaching out directly. Always reply in clear, simple sentences as if you are speaking directly to the user. Do not use asterisks, bullet points, or markdown formatting unless the user requests a list. Focus on solving the user’s query in plain English.
+    Only answer questions about Door to Doors’s sourcing, manufacturing, logistics, and related services. If asked about web development, SEO, or unrelated digital services, clarify that Door to Doors specializes in China sourcing and manufacturing solutions. Be helpful, professional, and concise. Use a friendly, expert tone. If asked about pricing, guide users to contact the team directly. If a user needs a real person, offer the contact email and suggest reaching out directly. Always reply in clear, simple sentences as if you are speaking directly to the user. Do not use asterisks, bullet points, or markdown formatting unless the user requests a list. Focus on solving the user’s query in plain English.
     `
 
     const quickReplies = [
@@ -104,7 +104,7 @@ const ChatbotEnhanced = () => {
                         model = genAI.getGenerativeModel({ model: modelName })
                         const prompt = `${onPointContext}
                         User question: ${inputMessage}
-                        Please provide a helpful, professional response about REO Trades's services, webapp, or related topics. Use clear, direct, conversational English. Do not use asterisks, bullet points, or markdown formatting unless the user requests a list. Focus on solving the user’s query in plain English.`
+                        Please provide a helpful, professional response about Door to Doors's services, webapp, or related topics. Use clear, direct, conversational English. Do not use asterisks, bullet points, or markdown formatting unless the user requests a list. Focus on solving the user’s query in plain English.`
                         result = await model.generateContent(prompt)
                         break
                     } catch (modelError) {
@@ -162,7 +162,7 @@ const ChatbotEnhanced = () => {
         setMessages([
             {
                 type: 'bot',
-                content: '👋 Hello! I\'m your REO Trades AI assistant. I can help you with:\n\n• Information about our services\n• Technical details about our webapp\n• Project inquiries\n• Team information\n• General questions\n\nWhat would you like to know?',
+                content: '👋 Hello! I\'m your Door to Doors AI assistant. I can help you with:\n\n• Information about our services\n• Technical details about our webapp\n• Project inquiries\n• Team information\n• General questions\n\nWhat would you like to know?',
                 timestamp: new Date().toLocaleTimeString()
             }
         ])
@@ -171,7 +171,7 @@ const ChatbotEnhanced = () => {
     return (
         <>
             {/* Sticky Chatbot Button */}
-            <div className={styles['onpointChatbot-stickyButton']} onClick={toggleChat} title="Chat with REO Trades Assistant">
+            <div className={styles['onpointChatbot-stickyButton']} onClick={toggleChat} title="Chat with Door to Doors Assistant">
                 {isOpen ? (
                     <FaTimes style={{ fontSize: 24, color: '#fff' }} />
                 ) : (
@@ -186,7 +186,7 @@ const ChatbotEnhanced = () => {
                     <div className={styles['onpointChatbot-header']}>
                         <div className={styles['onpointChatbot-headerTitle']}>
                             <HiSparkles style={{ fontSize: 20 }} />
-                            <span>REO Trades Assistant</span>
+                            <span>Door to Doors Assistant</span>
                         </div>
                         <div className={styles['onpointChatbot-headerStatus']}>
                             <div className={styles['onpointChatbot-headerStatusDot']}></div>
@@ -256,7 +256,7 @@ const ChatbotEnhanced = () => {
                             value={inputMessage}
                             onChange={(e) => setInputMessage(e.target.value)}
                             onKeyPress={handleKeyPress}
-                            placeholder="Ask me anything about REO Trades..."
+                            placeholder="Ask me anything about Door to Doors..."
                             className={styles['onpointChatbot-input']}
                             disabled={isLoading}
                         />

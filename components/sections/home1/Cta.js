@@ -22,7 +22,7 @@ export default function Cta() {
                     </div>
                     <h3 className="cta-one__title">
                         Ready to source from China with confidence?
-                        <br /> Partner with REO Trades for a<br/> hassle-free experience.
+                        <br /> Partner with Door to Doors for a<br/> hassle-free experience.
                     </h3>
                     <div className="cta-one__contact-box">
                         <div className="icon">
