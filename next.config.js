@@ -1,5 +1,14 @@
 module.exports = {
   images: {
-    domains: ['cdn.sanity.io', 'img.youtube.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+    ],
   },
-} 
+}

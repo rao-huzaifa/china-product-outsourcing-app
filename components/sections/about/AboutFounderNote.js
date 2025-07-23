@@ -17,7 +17,7 @@ export default function AboutFounderNote() {
               </p>
               <div className="about-founder-note__signature mt-4">
                 <strong>Looking forward to partnering with you,</strong><br />
-                <span className="about-founder-note__name">Haibat Khan</span><br />
+                <span className="about-founder-note__name">Faraz Khan</span><br />
                 <span className="about-founder-note__role">Co-Founder, Door to Doors</span>
               </div>
             </div>

@@ -28,6 +28,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@google/generative-ai": "^0.24.1",
     "@portabletext/react": "^3.2.1",
+    "@sanity/vision": "^3.37.0",
     "@thednp/dommatrix": "^2.0.6",
     "bootstrap-touchspin": "^4.7.3",
     "framer-motion": "^12.23.0",

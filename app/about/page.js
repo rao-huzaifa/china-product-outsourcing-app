@@ -46,7 +46,7 @@ function FounderNote() {
             </blockquote>
             <div className="about-one__signature mt-4" style={{borderTop: '1px solid #eee', paddingTop: '1rem'}}>
               <span style={{fontFamily: 'cursive', fontSize: '1.2rem', color: '#0d6efd'}}>Looking forward to partnering with you,</span><br />
-              <span className="about-one__name" style={{fontWeight: 600}}>Haibat Khan</span><br />
+              <span className="about-one__name" style={{fontWeight: 600}}>Faraz Khan</span><br />
               <span className="about-one__role" style={{color: '#888'}}>Co-Founder, Door to Doors</span>
             </div>
           </div>
