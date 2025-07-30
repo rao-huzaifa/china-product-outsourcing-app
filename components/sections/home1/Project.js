@@ -48,7 +48,7 @@ export default function Project() {
                         </div>
                         <div className="project-two__btn-box">
                             <Link
-                            href="/project-details"
+                            href="/projects"
                             className="thm-btn project-two__btn"
                             >
                             more project
