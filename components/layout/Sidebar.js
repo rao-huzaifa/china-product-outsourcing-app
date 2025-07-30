@@ -51,13 +51,13 @@ export default function Sidebar({ isSidebar, handleSidebar }) {
                         <div className="content-inner">
                         <div className="logo">
                             <Link href="/">
-                            <Image src="/assets/images/resources/for blackbg logo.png" width={150} height={50} alt="Door to Doors Logo" />
+                            <Image src="/assets/images/resources/for blackbg logo.png" width={150} height={50} alt="Door to Door Logo" />
                             </Link>
                         </div>
                         <div className="content-box">
                             <h4>About Us</h4>
                             <p>
-                            Door to Doors is your trusted partner for seamless China sourcing and manufacturing solutions. We connect businesses worldwide with China&apos;s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind throughout your product journey.
+                            Door to Door is your trusted partner for seamless China sourcing and manufacturing solutions. We connect businesses worldwide with China&apos;s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind throughout your product journey.
                             </p>
                         </div>
                         <div className="form-inner">

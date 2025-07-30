@@ -459,10 +459,10 @@ export default function ShippingCalculatorPage() {
             <HeroIcon>
               <Calculator style={{ width: 56, height: 56, color: '#fff', animation: 'spin 3s linear infinite' }} />
             </HeroIcon>
-            <HeroTitle>Door to Doors Shipping Calculator</HeroTitle>
+            <HeroTitle>Door to Door Shipping Calculator</HeroTitle>
             <HeroTagline>Instant Global Shipping Estimates</HeroTagline>
             <HeroDesc>
-              Calculate your shipping costs from China to anywhere in the world with Door to Doors&apos;s trusted logistics expertise. Fast, transparent, and tailored for your business needs.
+              Calculate your shipping costs from China to anywhere in the world with Door to Door&apos;s trusted logistics expertise. Fast, transparent, and tailored for your business needs.
             </HeroDesc>
           </HeroSection>
           {/* Form Section - centered, wide, with sticky button on mobile */}
@@ -722,7 +722,7 @@ export default function ShippingCalculatorPage() {
           <Cta />
           {/* Footer */}
           <Footer>
-            <p>Door to Doors.biz - Your trusted partner for global sourcing & shipping solutions</p>
+            <p>Door to Door.biz - Your trusted partner for global sourcing & shipping solutions</p>
           </Footer>
         </Container>
       </PageWrapper>

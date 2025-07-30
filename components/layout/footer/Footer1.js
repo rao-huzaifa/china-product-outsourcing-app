@@ -65,7 +65,7 @@ export default function Footer1() {
                         <Link href="/">
                             <Image
                             src="/assets/images/resources/for blackbg logo.png"
-                            alt="Door to Doors Logo"
+                            alt="Door to Door Logo"
                             width={180}
                             height={60}
                             />
@@ -195,7 +195,7 @@ export default function Footer1() {
             <div className="container">
                 <div className="site-footer__bottom-inner">
                 <p className="site-footer__bottom-text">
-                    © Door to Doors 2024 | All Rights Reserved<br />
+                    © Door to Door 2024 | All Rights Reserved<br />
                     <span style={{ fontSize: '0.95em', color: '#aaa' }}>
                         Design & Marketing by <a href="https://reorank.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>REO Rank</a>
                     </span>

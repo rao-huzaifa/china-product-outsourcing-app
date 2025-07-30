@@ -9,7 +9,7 @@ const Chatbot = () => {
     const [messages, setMessages] = useState([
         {
             type: 'bot',
-            content: 'Hello! I\'m your Door to Doors assistant. I can help you with information about our services, projects, team, and any questions about our webapp. How can I assist you today?',
+            content: 'Hello! I\'m your Door to Door assistant. I can help you with information about our services, projects, team, and any questions about our webapp. How can I assist you today?',
             timestamp: new Date().toLocaleTimeString()
         }
     ])
@@ -43,7 +43,7 @@ const Chatbot = () => {
     }, [])
 
     const onPointContext = `
-    You are an AI assistant for Door to Doors, a modern web development and digital services company. Here's key information about Door to Doors:
+    You are an AI assistant for Door to Door, a modern web development and digital services company. Here's key information about Door to Door:
 
     SERVICES:
     - Web Development & Design
@@ -56,7 +56,7 @@ const Chatbot = () => {
     - Technical Support
 
     COMPANY INFO:
-    - Door to Doors is a cutting-edge technology company
+    - Door to Door is a cutting-edge technology company
     - We specialize in creating innovative digital solutions
     - Our team consists of experienced developers, designers, and digital strategists
     - We focus on delivering high-quality, scalable solutions
@@ -83,7 +83,7 @@ const Chatbot = () => {
     - Sanity CMS for content management
     - Responsive design with modern UI
 
-    Please answer questions about Door to Doors's services, team, projects, or any technical aspects of the webapp. Be helpful, professional, and informative. If asked about specific technical details or pricing, guide users to contact the team directly.
+    Please answer questions about Door to Door's services, team, projects, or any technical aspects of the webapp. Be helpful, professional, and informative. If asked about specific technical details or pricing, guide users to contact the team directly.
     `
 
     const handleSendMessage = async () => {
@@ -107,7 +107,7 @@ const Chatbot = () => {
                 
                 User question: ${inputMessage}
                 
-                Please provide a helpful response about Door to Doors's services, webapp, or related topics. Keep responses concise but informative.`
+                Please provide a helpful response about Door to Door's services, webapp, or related topics. Keep responses concise but informative.`
 
                 const result = await model.generateContent(prompt)
                 const response = await result.response
@@ -179,7 +179,7 @@ const Chatbot = () => {
                     <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <HiSparkles className="text-xl" />
-                            <h3 className="font-semibold">Door to Doors Assistant</h3>
+                            <h3 className="font-semibold">Door to Door Assistant</h3>
                         </div>
                         <div className="flex items-center gap-1">
                             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -236,7 +236,7 @@ const Chatbot = () => {
                                 value={inputMessage}
                                 onChange={(e) => setInputMessage(e.target.value)}
                                 onKeyPress={handleKeyPress}
-                                placeholder="Ask me anything about Door to Doors..."
+                                placeholder="Ask me anything about Door to Door..."
                                 className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                                 disabled={isLoading}
                             />

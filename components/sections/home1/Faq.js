@@ -62,7 +62,7 @@ export default function Faq() {
                                         <span className="section-title__tagline">FAQ</span>
                                     </div>
                                     <h2 className="section-title__title">
-                                        Frequently Asked Questions<br />About Door to Doors Sourcing
+                                        Frequently Asked Questions<br />About Door to Door Sourcing
                                     </h2>
                                 </div>
                                 <div
@@ -71,7 +71,7 @@ export default function Faq() {
                                     >
                                     <div className={isActive.key == 1 ? "accrodion active" : "accrodion"} onClick={() => handleToggle(1)}>
                                         <div className="accrodion-title">
-                                        <h4>How does Door to Doors ensure product quality?</h4>
+                                        <h4>How does Door to Door ensure product quality?</h4>
                                         </div>
                                         <div className={isActive.key == 1 ? "accrodion-content current" : "accrodion-content"}>
                                             <div className="inner">
@@ -97,7 +97,7 @@ export default function Faq() {
                                     </div>
                                     <div className={isActive.key == 3 ? "accrodion active" : "accrodion"} onClick={() => handleToggle(3)}>
                                         <div className="accrodion-title">
-                                        <h4>Can Door to Doors handle both small and large orders?</h4>
+                                        <h4>Can Door to Door handle both small and large orders?</h4>
                                         </div>
                                         <div className={isActive.key == 3 ? "accrodion-content current" : "accrodion-content"}>
                                             <div className="inner">

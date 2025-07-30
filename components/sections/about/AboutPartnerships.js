@@ -15,7 +15,7 @@ export default function AboutPartnerships() {
           <div className="col-xl-8 text-center">
             <h2 className="about-partnerships__title mb-3">Long-Term Partnerships</h2>
             <p className="about-partnerships__desc">
-              At Door to Doors, we aim to build lasting relationships, not just transactions. Many of our clients have trusted us for years as their go-to partner for China sourcing.
+              At Door to Door, we aim to build lasting relationships, not just transactions. Many of our clients have trusted us for years as their go-to partner for China sourcing.
             </p>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function PrivacyPage() {
       <section className="privacy-section" style={{ background: '#fff', padding: '60px 0', marginBottom: 64 }}>
         <div className="container" style={{ maxWidth: 800, margin: '0 auto' }}>
           <h1 className="section-title__title" style={{ fontWeight: 800, fontSize: 36, marginBottom: 24 }}>Privacy Policy</h1>
-          <p>At Door to Doors, we are committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information.</p>
+          <p>At Door to Door, we are committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information.</p>
           <h2 style={{ fontWeight: 700, fontSize: 22, marginTop: 32 }}>1. Information We Collect</h2>
           <p>We may collect personal information such as your name, email address, phone number, and company details when you use our services or contact us.</p>
           <h2 style={{ fontWeight: 700, fontSize: 22, marginTop: 32 }}>2. How We Use Information</h2>

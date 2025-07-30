@@ -8,7 +8,7 @@ const mission = {
 
 const commitment = {
   title: 'Our Commitment',
-  desc: 'At Door to Doors, your success is our priority. We treat your projects with the care and dedication we&apos;d give our own, understanding the vision and hard work behind every product. Your success defines ours, and we&apos;re committed to helping you achieve your manufacturing goals.',
+  desc: 'At Door to Door, your success is our priority. We treat your projects with the care and dedication we&apos;d give our own, understanding the vision and hard work behind every product. Your success defines ours, and we&apos;re committed to helping you achieve your manufacturing goals.',
   icon: 'icon-heart',
 };
 

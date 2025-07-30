@@ -15,7 +15,7 @@ export default function AboutClientApproach() {
           <div className="col-xl-8 text-center">
             <h2 className="about-client-approach__title mb-3">Client-Centric Approach</h2>
             <p className="about-client-approach__desc">
-              At Door to Doors, we put our clients first with a service model built on trust, transparency, and support.
+              At Door to Door, we put our clients first with a service model built on trust, transparency, and support.
             </p>
           </div>
         </div>

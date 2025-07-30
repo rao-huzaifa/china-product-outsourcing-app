@@ -77,7 +77,7 @@ export default function Footer2() {
                         <div className="footer-widget-two__column footer-widget-two__about">
                         <div className="footer-widget-two__logo">
                             <Link href="/">
-                            <Image src="/assets/images/resources/for blackbg logo.png" alt="Door to Doors Footer Logo" width={180} height={60} />
+                            <Image src="/assets/images/resources/for blackbg logo.png" alt="Door to Door Footer Logo" width={180} height={60} />
                             </Link>
                         </div>
                         <p className="footer-widget-two__text">

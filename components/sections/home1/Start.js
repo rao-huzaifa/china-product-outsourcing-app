@@ -46,7 +46,7 @@ export default function Start() {
                             <span className="icon-shopping-cart why-are-we__cart" />
                             </div>
                             <div className="content">
-                            <h3>On time delivary</h3>
+                            <h3>On time Delivery</h3>
                             <p>Logistic service involves the ntation and control </p>
                             </div>
                         </li>

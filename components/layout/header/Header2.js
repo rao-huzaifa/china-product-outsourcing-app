@@ -13,7 +13,7 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSide
                     <div className="main-menu-two__left">
                     <div className="main-menu-two__logo">
                         <Link href="/">
-                        <Image src="/assets/images/resources/for whitebg logo.png" alt="Door to Doors Logo" width={180} height={60} />
+                        <Image src="/assets/images/resources/for whitebg logo.png" alt="Door to Door Logo" width={180} height={60} />
                         </Link>
                     </div>
                     <div className="main-menu-two__main-menu-box">
@@ -60,7 +60,7 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSide
                         <div className="main-menu-two__left">
                             <div className="main-menu-two__logo">
                             <Link href="/">
-                                <Image src="/assets/images/resources/for whitebg logo.png" alt="Door to Doors Logo" width={180} height={60} />
+                                <Image src="/assets/images/resources/for whitebg logo.png" alt="Door to Door Logo" width={180} height={60} />
                             </Link>
                             </div>
                             <div className="main-menu-two__main-menu-box">
