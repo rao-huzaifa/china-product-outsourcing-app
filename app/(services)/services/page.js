@@ -183,7 +183,7 @@ export default function Home() {
                                 </div>
                                 <h3 className="services-one__title">
                                 <Link href="/speedy-dispatch">
-                                    Seamless logistics for your business needs
+                                     logistics for your business needs
                                 </Link>
                                 </h3>
                                 <div className="services-one__btn-box">

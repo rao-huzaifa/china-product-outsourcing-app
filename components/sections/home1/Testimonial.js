@@ -1,3 +1,4 @@
+'use client'
 import TestimonialSlider1 from "../../slider/TestimonialSlider1"
 import Image from 'next/image'
 

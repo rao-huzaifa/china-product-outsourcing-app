@@ -7896,7 +7896,7 @@ function V(l, a, u, t, e, f) {
     case "required":
     case "reversed":
     case "scoped":
-    case "seamless":
+    case "":
     case "itemScope":
       t && typeof t != "function" && typeof t != "symbol" ? l.setAttribute(u, "") : l.removeAttribute(u);
       break;

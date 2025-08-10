@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import Image from 'next/image'
 import { useState } from 'react'
@@ -57,7 +58,7 @@ export default function Sidebar({ isSidebar, handleSidebar }) {
                         <div className="content-box">
                             <h4>About Us</h4>
                             <p>
-                            Door to Door is your trusted partner for seamless China sourcing and manufacturing solutions. We connect businesses worldwide with China&apos;s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind throughout your product journey.
+                            Door to Door is your trusted partner for  China sourcing and manufacturing solutions. We connect businesses worldwide with China&apos;s vast manufacturing capabilities, ensuring quality, efficiency, and peace of mind throughout your product journey.
                             </p>
                         </div>
                         <div className="form-inner">

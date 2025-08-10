@@ -105,9 +105,9 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                             </div>
                         </li>
                         <li className={isActive.key == 5 ? "dropdown current" : "dropdown"}>
-                            <Link href="/projects" onClick={handleMobileMenu}>Projects</Link>
+                            <Link href="/projects" onClick={handleMobileMenu}>Products</Link>
                             <ul style={{ display: `${isActive.key == 5 ? "block" : "none"}` }}>
-                                <li><Link href="/projects" onClick={handleMobileMenu}>All Projects</Link></li>
+                                <li><Link href="/projects" onClick={handleMobileMenu}>All Products</Link></li>
                                 {categories.map(cat => (
                                   <li key={cat.slug.current}>
                                     <Link href={`/projects/${cat.slug.current}`} onClick={handleMobileMenu}>{cat.title}</Link>

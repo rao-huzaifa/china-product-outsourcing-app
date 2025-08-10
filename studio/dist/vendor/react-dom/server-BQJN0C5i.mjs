@@ -395,7 +395,7 @@ function R(n, l, e) {
     case "required":
     case "reversed":
     case "scoped":
-    case "seamless":
+    case "":
     case "itemScope":
       e && typeof e != "function" && typeof e != "symbol" && n.push(" ", l, '=""');
       break;

@@ -1,12 +1,35 @@
 'use client'
 import Link from "next/link"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { createSanityDocument } from '../../../lib/sanity'
+import { createClient } from '@sanity/client'
+
 export default function Faq() {
     const [isActive, setIsActive] = useState({
         status: false,
         key: 1,
     })
+
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        const sanity = createClient({
+            projectId: 'hjoc1p23',
+            dataset: 'production',
+            apiVersion: '2024-07-08',
+            useCdn: true,
+        })
+        const fetchCategories = async () => {
+            try {
+                const result = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
+                setCategories(result)
+            } catch (error) {
+                console.error('Error fetching categories:', error)
+                setCategories([])
+            }
+        }
+        fetchCategories()
+    }, [])
 
     const handleToggle = (key) => {
         if (isActive.key === key) {
@@ -115,7 +138,7 @@ export default function Faq() {
                                         <div className={isActive.key == 4 ? "accrodion-content current" : "accrodion-content"}>
                                             <div className="inner">
                                                 <p>
-                                                We source for chemicals, automobiles, clothing, tools, and more.
+                                                We source for chemicals, automotive, clothing, tools, and more.
                                                 </p>
                                             </div>
                                         </div>
@@ -141,7 +164,7 @@ export default function Faq() {
                                         <div className={isActive.key == 6 ? "accrodion-content current" : "accrodion-content"}>
                                             <div className="inner">
                                                 <p>
-                                                Contact us through our website or call us directly. We’ll guide you through every step.
+                                                Contact us through our website or call us directly. We&apos;ll guide you through every step.
                                                 </p>
                                             </div>
                                         </div>
@@ -156,7 +179,7 @@ export default function Faq() {
                             data-wow-delay="300ms"
                         >
                             <h3 className="faq-one__from-title">
-                            Our One-Stop Car Repair Shop
+                            Get Your Free China Sourcing Quote
                             </h3>
                             <form onSubmit={handleSubmit} className="contact-form-validated faq-one__form" noValidate>
                             <div className="row">
@@ -179,26 +202,25 @@ export default function Faq() {
                                 <div className="faq-one__input-box">
                                     <div className="select-box">
                                         <select name="serviceType" value={form.serviceType} onChange={handleChange} className="selectmenu wide">
-                                            <option value="">Choose a Option</option>
-                                            <option>Type Of Service 01</option>
-                                            <option>Type Of Service 02</option>
-                                            <option>Type Of Service 03</option>
-                                            <option>Type Of Service 04</option>
-                                            <option>Type Of Service 05</option>
-                                            <option>Type Of Service 06</option>
+                                            <option value="">Select Product Category</option>
+                                            {categories.map((cat) => (
+                                                <option key={cat.slug.current} value={cat.title}>
+                                                    {cat.title}
+                                                </option>
+                                            ))}
                                         </select>
                                     </div>
                                 </div>
                                 </div>
                                 <div className="col-xl-12">
                                 <div className="faq-one__input-box text-message-box">
-                                    <textarea name="message" placeholder="Message here.." value={form.message} onChange={handleChange} required />
+                                    <textarea name="message" placeholder="Tell us about your sourcing needs..." value={form.message} onChange={handleChange} required />
                                 </div>
                                 </div>
                                 <div className="col-xl-12">
                                 <div className="faq-one__btn-box">
                                     <button type="submit" className="thm-btn faq-one__btn" disabled={status==='loading'}>
-                                    {status==='loading' ? 'Submitting...' : 'Submit Now'}
+                                    {status==='loading' ? 'Submitting...' : 'Get Free Quote'}
                                     <span />
                                     </button>
                                 </div>

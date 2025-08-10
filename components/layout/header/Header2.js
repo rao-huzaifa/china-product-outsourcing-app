@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
@@ -27,9 +28,11 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSide
                     <div className="main-menu-two__call-and-btn-box">
                         <div className="main-menu-two__call">
                         <div className="main-menu-two__call-icon">
-                            <img
-                            src="assets/images/icon/main-menu-two-chat-icon.png"
+                            <Image
+                            src="/assets/images/icon/main-menu-two-chat-icon.png"
                             alt=""
+                            width={40}
+                            height={40}
                             />
                         </div>
                         <div className="main-menu-two__call-number">
@@ -74,9 +77,11 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSide
                             <div className="main-menu-two__call-and-btn-box">
                             <div className="main-menu-two__call">
                                 <div className="main-menu-two__call-icon">
-                                <img
-                                    src="assets/images/icon/main-menu-two-chat-icon.png"
-                                    alt=""
+                                                                <Image
+                                src="/assets/images/icon/main-menu-two-chat-icon.png"
+                                alt=""
+                                width={40}
+                                height={40}
                                 />
                                 </div>
                                 <div className="main-menu-two__call-number">

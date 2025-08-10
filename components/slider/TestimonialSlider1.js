@@ -104,9 +104,11 @@ export default function TestimonialSlider1() {
                                     <span className="icon-quote" />
                                 </div>
                                 <div className="testimonial-one__client-img">
-                                    <img
-                                    src="assets/images/testimonial/testimonial-1-1.jpg"
+                                    <Image
+                                    src="/assets/images/testimonial/testimonial-1-1.jpg"
                                     alt=""
+                                    width={63}
+                                    height={63}
                                     />
                                 </div>
                                 <div className="testimonial-one__ratting">
@@ -131,9 +133,11 @@ export default function TestimonialSlider1() {
                                     <span className="icon-quote" />
                                 </div>
                                 <div className="testimonial-one__client-img">
-                                    <img
-                                    src="assets/images/testimonial/testimonial-1-2.jpg"
+                                    <Image
+                                    src="/assets/images/testimonial/testimonial-1-2.jpg"
                                     alt=""
+                                    width={63}
+                                    height={63}
                                     />
                                 </div>
                                 <div className="testimonial-one__ratting">
@@ -158,9 +162,11 @@ export default function TestimonialSlider1() {
                                     <span className="icon-quote" />
                                 </div>
                                 <div className="testimonial-one__client-img">
-                                    <img
-                                    src="assets/images/testimonial/testimonial-1-3.jpg"
+                                    <Image
+                                    src="/assets/images/testimonial/testimonial-1-3.jpg"
                                     alt=""
+                                    width={63}
+                                    height={63}
                                     />
                                 </div>
                                 <div className="testimonial-one__ratting">
@@ -185,9 +191,11 @@ export default function TestimonialSlider1() {
                                     <span className="icon-quote" />
                                 </div>
                                 <div className="testimonial-one__client-img">
-                                    <img
-                                    src="assets/images/testimonial/testimonial-1-4.jpg"
+                                    <Image
+                                    src="/assets/images/testimonial/testimonial-1-4.jpg"
                                     alt=""
+                                    width={63}
+                                    height={63}
                                     />
                                 </div>
                                 <div className="testimonial-one__ratting">

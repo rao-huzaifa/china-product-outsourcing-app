@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 export default function QuantityInput() {
     const [value, setValue] = useState(1)

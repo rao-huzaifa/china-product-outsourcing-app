@@ -1,3 +1,4 @@
+'use client'
 import CounterUp from "../../elements/CounterUp"
 export default function Brand() {
     return (

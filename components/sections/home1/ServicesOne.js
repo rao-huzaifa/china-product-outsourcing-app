@@ -11,7 +11,7 @@ export default function ServicesOne() {
                     <span className="section-title__tagline">WHAT WE DO</span>
                     </div>
                     <h2 className="section-title__title">
-                    Seamless Sourcing from China<br /> Managed by Experts
+                     Sourcing from China<br /> Managed by Experts
                     </h2>
                 </div>
                 <div className="row">

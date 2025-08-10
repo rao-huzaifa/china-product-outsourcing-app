@@ -55,7 +55,7 @@ export default function Banner() {
                           Door to Door: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With Door to Door, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With Door to Door, sourcing from China is  and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>
@@ -107,7 +107,7 @@ export default function Banner() {
                           Door to Door: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With Door to Door, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With Door to Door, sourcing from China is  and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>
@@ -159,7 +159,7 @@ export default function Banner() {
                           Door to Door: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With Door to Door, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With Door to Door, sourcing from China is  and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>
@@ -211,7 +211,7 @@ export default function Banner() {
                           Door to Door: <span>Your Trusted</span> China Sourcing Partner
                         </h2>
                         <p className="main-slider__text">
-                          From Departure to Destination—With Door to Door, sourcing from China is seamless and worry-free.<br />
+                          From Departure to Destination—With Door to Door, sourcing from China is  and worry-free.<br />
                           We manage every step of your product’s journey, ensuring quality, efficiency, and peace of mind.<br />
                           Let us handle the complexities of global manufacturing and trade while you focus on growing your business.
                         </p>

@@ -3,7 +3,7 @@ import React from 'react';
 const features = [
   { title: 'Personalized Service', desc: 'Tailored solutions to meet your unique needs.', icon: 'icon-user-check' },
   { title: 'Transparent Communication', desc: 'Clear updates throughout the sourcing and manufacturing process.', icon: 'icon-chat' },
-  { title: 'Dedicated Account Managers', desc: 'Ensuring seamless operations and support.', icon: 'icon-briefcase' },
+  { title: 'Dedicated Account Managers', desc: 'Ensuring  operations and support.', icon: 'icon-briefcase' },
   { title: 'Regular Progress Updates', desc: 'Detailed reports to keep you informed.', icon: 'icon-report' },
 ];
 

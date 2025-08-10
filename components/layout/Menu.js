@@ -64,10 +64,10 @@ export default function Menu() {
                 <Link href="/calculator">Calculator</Link>
             </li>
             <li className="dropdown">
-                <Link href="/projects">Projects</Link>
+                <Link href="/projects">Products</Link>
                 <ul className="projects-dropdown">
                     <li className="dropdown-header">
-                        <Link href="/projects">All Projects</Link>
+                        <Link href="/projects">All Products</Link>
                     </li>
                     <li className="dropdown-columns">
                         <div className="dropdown-column">

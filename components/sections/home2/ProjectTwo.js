@@ -20,7 +20,7 @@ export default function ProjectTwo() {
                             <span className="section-title__tagline">latest project</span>
                             </div>
                             <h2 className="section-title__title">
-                            Seamless logistics for your logo
+                             logistics for your Products.
                             </h2>
                         </div>
                         <div className="project-two__btn-box">

@@ -1,3 +1,6 @@
+'use client'
+import Image from 'next/image'
+
 export default function ProcessOne() {
     return (
         <>
@@ -17,10 +20,10 @@ export default function ProcessOne() {
                     <div className="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                     <div className="process-one__single">
                         <div className="process-one__shape-1">
-                        <img src="assets/images/shapes/process-one-shape-1.png" alt="" />
+                        <Image src="/assets/images/shapes/process-one-shape-1.png" alt="" width={100} height={100} />
                         </div>
                         <div className="process-one__count" />
-                        <h3 className="process-one__title">Seamless Supply Chain</h3>
+                        <h3 className="process-one__title"> Supply Chain</h3>
                         <div className="process-one__icon-and-text">
                         <div className="icon">
                             <span className="icon-crane" />
@@ -36,7 +39,7 @@ export default function ProcessOne() {
                     <div className="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                     <div className="process-one__single">
                         <div className="process-one__shape-1">
-                        <img src="assets/images/shapes/process-one-shape-1.png" alt="" />
+                        <Image src="/assets/images/shapes/process-one-shape-1.png" alt="" width={100} height={100} />
                         </div>
                         <div className="process-one__count" />
                         <h3 className="process-one__title">Reliable Distribution</h3>

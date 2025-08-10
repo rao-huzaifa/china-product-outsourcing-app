@@ -43,14 +43,11 @@ export default function Counter() {
                                         <span className="section-title__tagline">Our Features</span>
                                     </div>
                                     <h2 className="section-title__title">
-                                        Simplifying your logistics of <br />
-                                        the challenges
+                                    Streamlining the Logistics for You.
                                     </h2>
                                 </div>
                                 <p className="counter-one__right-text">
-                                    Logistic service involves the planning, implementation, and
-                                    control of the efficient and effective movement and storage of
-                                    goods and materials.
+                        
                                 </p>
                                 <ul className="counter-one__count-list list-unstyled">
                                     <li>

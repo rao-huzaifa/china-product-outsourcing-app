@@ -1,7 +1,8 @@
-
+'use client'
 
 import Layout from "../components/layout/Layout"
 import Link from "next/link"
+import Image from 'next/image'
 export default function Error404() {
 
     return (
@@ -12,7 +13,7 @@ export default function Error404() {
                 {/*Error Page Start*/}
                 <section className="error-page">
                     <div className="error-page-shape-one float-bob-x">
-                    <img src="assets/images/shapes/error-page-shape-1.png" alt="" />
+                    <Image src="/assets/images/shapes/error-page-shape-1.png" alt="" width={100} height={100} />
                     </div>
                     <div className="container">
                     <div className="row">
@@ -59,7 +60,7 @@ export default function Error404() {
                         <div className="cta-one__icon">
                             <span className="icon-call" />
                             <div className="cta-one__shape-1">
-                                <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
+                                <Image src="/assets/images/shapes/cta-one-shape-1.png" alt="" width={100} height={100} />
                             </div>
                         </div>
                         <h3 className="cta-one__title">

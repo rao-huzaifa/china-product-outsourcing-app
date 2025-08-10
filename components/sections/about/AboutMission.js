@@ -2,7 +2,7 @@ import React from 'react';
 
 const mission = {
   title: 'Our Mission',
-  desc: 'To empower businesses of all sizes with seamless access to China’s manufacturing expertise, helping them bring their product visions to life efficiently and cost-effectively.',
+  desc: 'To empower businesses of all sizes with  access to China’s manufacturing expertise, helping them bring their product visions to life efficiently and cost-effectively.',
   icon: 'icon-target',
 };
 

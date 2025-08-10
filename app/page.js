@@ -6,7 +6,6 @@ import WhyChoose from "../components/sections/home1/WhyChoose"
 import Project from "../components/sections/home1/Project"
 import Brand from "../components/sections/home1/Brand"
 import Counter from "../components/sections/home1/Counter"
-import Team from "../components/sections/home1/Team"
 import Start from "../components/sections/home1/Start"
 import Faq from "../components/sections/home1/Faq"
 import Testimonial from "../components/sections/home1/Testimonial"
@@ -19,15 +18,18 @@ export default function Home() {
         <>
             <Layout headerStyle={1} footerStyle={1}>
                 <Banner />
+                <div style={{ marginTop: '80px' }}>
+                    <About />
+                </div>
                 <ServicesOne />
                 <WhyChoose />
                 <ProcessOne />
                 <Project />
                 <Brand />
-                <About />
                 <Counter />
-                <Team />
-                <Start />
+                <div style={{ marginTop: '80px' }}>
+                    <Start />
+                </div>
                 <Faq />
                 <Testimonial />
                 <Blog />

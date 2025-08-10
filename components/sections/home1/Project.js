@@ -36,14 +36,14 @@ export default function Project() {
                     className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                     data-wow-delay="100ms"
                     >
-                    <div className="project-two__single">
+                    <div className="project-two__single" style={{ height: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                         <div className="project-two__content-box">
                         <div className="section-title text-left">
                             <div className="section-title__tagline-box">
                             <span className="section-title__tagline">latest project</span>
                             </div>
                             <h2 className="section-title__title">
-                            Seamless logistics for your logo
+                             logistics for your Products
                             </h2>
                         </div>
                         <div className="project-two__btn-box">
@@ -66,12 +66,30 @@ export default function Project() {
                                 className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                                 data-wow-delay={`${300 + idx * 200}ms`}
                             >
-                                <div className="project-two__single">
-                                    <div className="project-two__img">
+                                <div className="project-two__single" style={{ height: '400px' }}>
+                                    <div className="project-two__img" style={{ height: '100%', position: 'relative' }}>
                                         {cat.image && cat.image.asset && cat.image.asset.url ? (
-                                            <Image src={cat.image.asset.url} alt={cat.title} width={410} height={310} style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '20px' }} />
+                                            <Image 
+                                                src={cat.image.asset.url} 
+                                                alt={cat.title} 
+                                                fill
+                                                style={{ 
+                                                    objectFit: 'cover', 
+                                                    borderRadius: '20px',
+                                                    width: '100%',
+                                                    height: '100%'
+                                                }} 
+                                            />
                                         ) : (
-                                            <div style={{height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e5e5e5', borderRadius: '20px'}}>
+                                            <div style={{
+                                                height: '100%', 
+                                                display: 'flex', 
+                                                alignItems: 'center', 
+                                                justifyContent: 'center', 
+                                                background: '#e5e5e5', 
+                                                borderRadius: '20px',
+                                                width: '100%'
+                                            }}>
                                                 <span style={{fontSize: '2rem', color: '#222'}}>410X310</span>
                                             </div>
                                         )}
@@ -95,9 +113,17 @@ export default function Project() {
                                 className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                                 data-wow-delay={`${300 + idx * 200}ms`}
                             >
-                                <div className="project-two__single">
-                                    <div className="project-two__img">
-                                        <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e5e5e5', borderRadius: '20px', minHeight: 200}}>
+                                <div className="project-two__single" style={{ height: '400px' }}>
+                                    <div className="project-two__img" style={{ height: '100%', position: 'relative' }}>
+                                        <div style={{
+                                            height: '100%', 
+                                            display: 'flex', 
+                                            alignItems: 'center', 
+                                            justifyContent: 'center', 
+                                            background: '#e5e5e5', 
+                                            borderRadius: '20px',
+                                            width: '100%'
+                                        }}>
                                             <span style={{fontSize: '2rem', color: '#222'}}>410X310</span>
                                         </div>
                                         <div className="project-two__content">

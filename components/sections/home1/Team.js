@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link"
 import TeamSlider from "../../slider/TeamSlider"
 export default function Team() {
@@ -12,8 +13,7 @@ export default function Team() {
                         <span className="section-title__tagline">Our Team</span>
                     </div>
                     <h2 className="section-title__title">
-                        Simplifying your logistics of <br />
-                        the challenges
+                    Streamlining the Logistics for You.
                     </h2>
                     </div>
                     <div className="team-one__nav">

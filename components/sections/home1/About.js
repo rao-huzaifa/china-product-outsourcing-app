@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import CounterUp from "../../elements/CounterUp"
 import Image from 'next/image'
@@ -16,7 +17,7 @@ export default function About() {
                             <span className="section-title__tagline">About Door to Door</span>
                         </div>
                         <h2 className="section-title__title">
-                            Seamless Sourcing & Supply Chain Solutions from China
+                             Sourcing & Supply Chain Solutions from China
                         </h2>
                         </div>
                         <p className="about-one__text">

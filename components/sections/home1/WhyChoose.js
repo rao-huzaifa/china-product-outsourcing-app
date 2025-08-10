@@ -1,4 +1,7 @@
+'use client'
 import Link from "next/link"
+import Image from 'next/image'
+
 export default function WhyChoose() {
     return (
         <>
@@ -13,7 +16,7 @@ export default function WhyChoose() {
                             <span className="section-title__tagline">Why Choose Door to Door?</span>
                         </div>
                         <h2 className="section-title__title">
-                            Your Strategic Partner for Seamless China Sourcing
+                            Your Strategic Partner for  China Sourcing
                         </h2>
                         </div>
                         <p className="why-choose-one__text">
@@ -23,7 +26,7 @@ export default function WhyChoose() {
                         <div className="why-choose-one__offer-list" style={{marginTop: '1.5rem', marginBottom: '1.5rem'}}>
                             <h3 className="why-choose-one__offer-title" style={{fontWeight: 'bold', marginBottom: '1rem'}}>What We Offer:</h3>
                             <ul className="why-choose-one__offer-items" style={{listStyle: 'disc inside', paddingLeft: '1rem'}}>
-                                <li><strong>Expert China Sourcing:</strong> For chemicals, automobiles, clothing, tools, and more.</li>
+                                <li><strong>Expert China Sourcing:</strong> For chemicals, automotive, clothing, tools, and more.</li>
                                 <li><strong>Quality Control:</strong> Every product meets your specifications and international standards.</li>
                                 <li><strong>Cost Optimization:</strong> Competitive prices to boost your profitability.</li>
                                 <li><strong>Product Development:</strong> Concept-to-prototype expertise.</li>
@@ -47,9 +50,12 @@ export default function WhyChoose() {
                         data-wow-delay="100ms"
                         data-wow-duration="2500ms"
                         >
-                        <img
-                            src="assets/images/resources/why-choose-one-img-1.jpg"
+                        <Image
+                            src="/assets/images/resources/why-choose-one-img-1.jpg"
                             alt=""
+                            width={400}
+                            height={300}
+                            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                         />
                         <div className="why-choose-one__delivery-box">
                             <div className="icon">

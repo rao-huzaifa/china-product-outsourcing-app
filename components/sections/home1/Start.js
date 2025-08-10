@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link"
 import Image from 'next/image'
 export default function Start() {
@@ -35,7 +36,7 @@ export default function Start() {
                             </div>
                             <div className="content">
                             <h3>Real Time tracking</h3>
-                            <p>Logistic service involves the ntation and control </p>
+                            <p>Track your products from factory floor to final delivery with our comprehensive monitoring system. Get real-time updates on production progress, quality inspections, and shipping status throughout your entire supply chain.</p>
                             </div>
                         </li>
                         <li>
@@ -47,7 +48,7 @@ export default function Start() {
                             </div>
                             <div className="content">
                             <h3>On time Delivery</h3>
-                            <p>Logistic service involves the ntation and control </p>
+                            <p>Our established network of trusted manufacturers and logistics partners ensures your products arrive exactly when promised. We coordinate every step from production completion to your doorstep, maintaining strict timelines.</p>
                             </div>
                         </li>
                         <li>
@@ -56,23 +57,10 @@ export default function Start() {
                             </div>
                             <div className="content">
                             <h3>24/7 online support</h3>
-                            <p>Logistic service involves the ntation and control </p>
+                            <p>Our bilingual team is available around the clock to address your sourcing needs. Whether you need urgent updates on production, have questions about quality control, or require assistance with customs documentation, we&apos;re here to help.</p>
                             </div>
                         </li>
                         </ul>
-                        <div className="why-are-we__img-2">
-                        <Image src="/assets/images/resources/why-are-we-img-2.jpg" alt="" width={400} height={300} />
-                        <div
-                            className="why-are-we__year wow fadeInLeft"
-                            data-wow-delay="300ms"
-                        >
-                            <h3>Since 1920</h3>
-                            <p>
-                            Logistic service involves the planning, implementation, and
-                            control of the efficient and effective movement and storage
-                            </p>
-                        </div>
-                        </div>
                     </div>
                     </div>
                 </div>

@@ -601,7 +601,7 @@ function C(n, e, l) {
     case "required":
     case "reversed":
     case "scoped":
-    case "seamless":
+    case "":
     case "itemScope":
       l && typeof l != "function" && typeof l != "symbol" && n.push(
         U,

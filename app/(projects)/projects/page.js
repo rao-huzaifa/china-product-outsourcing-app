@@ -1,9 +1,11 @@
+'use client'
 
 import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
 import { createClient } from '@sanity/client'
 import './category-nav.css'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 const sanity = createClient({
   projectId: 'hjoc1p23',
@@ -33,11 +35,28 @@ const categoriesQuery = `
   }
 `
 
-export default async function Home() {
-  const [projects, categories] = await Promise.all([
-    sanity.fetch(projectsQuery),
-    sanity.fetch(categoriesQuery)
-  ])
+export default function Home() {
+  const [projects, setProjects] = useState([])
+  const [categories, setCategories] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [projectsData, categoriesData] = await Promise.all([
+          sanity.fetch(projectsQuery),
+          sanity.fetch(categoriesQuery)
+        ])
+        setProjects(projectsData)
+        setCategories(categoriesData)
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData()
+  }, [])
 
   // On the main projects page, 'All' is always active
   const activeCategory = null;
@@ -55,6 +74,16 @@ export default async function Home() {
     '#f97316', // amber
     '#6366f1', // indigo
   ];
+
+  if (loading) {
+    return (
+      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Projects">
+        <div style={{ textAlign: 'center', padding: '50px' }}>
+          <p>Loading projects...</p>
+        </div>
+      </Layout>
+    )
+  }
 
   return (
     <>
@@ -108,7 +137,7 @@ export default async function Home() {
                     <div className="project-two__single">
                       <div className="project-two__img">
                         <Image
-                          src={project.mainImage?.asset?.url || "/assets/images/project/project-2-1.jpg"}
+                          src={project.mainImage?.asset?.url || "assets/images/project/project-2-1.jpg"}
                           alt={project.title}
                           width={400}
                           height={300}
@@ -145,7 +174,7 @@ export default async function Home() {
                   <div className="cta-one__icon">
                     <span className="icon-call" />
                     <div className="cta-one__shape-1">
-                      <img src="assets/images/shapes/cta-one-shape-1.png" alt="" />
+                      <Image src="assets/images/shapes/cta-one-shape-1.png" alt="" width={100} height={100} />
                     </div>
                   </div>
                   <h3 className="cta-one__title">
