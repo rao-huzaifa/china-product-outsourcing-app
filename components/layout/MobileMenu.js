@@ -48,6 +48,12 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
       });
     }
   };
+
+  // Helper function to capitalize first letter
+  const capitalizeFirstLetter = (string) => {
+    if (!string) return '';
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  }
     return (
         <>
             
@@ -110,7 +116,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                                 <li><Link href="/projects" onClick={handleMobileMenu}>All Products</Link></li>
                                 {categories.map(cat => (
                                   <li key={cat.slug.current}>
-                                    <Link href={`/projects/${cat.slug.current}`} onClick={handleMobileMenu}>{cat.title}</Link>
+                                    <Link href={`/projects/${cat.slug.current}`} onClick={handleMobileMenu}>{capitalizeFirstLetter(cat.title)}</Link>
                                   </li>
                                 ))}
                             </ul>

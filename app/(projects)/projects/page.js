@@ -35,6 +35,12 @@ const categoriesQuery = `
   }
 `
 
+// Helper function to capitalize first letter
+const capitalizeFirstLetter = (string) => {
+  if (!string) return '';
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
 export default function Home() {
   const [projects, setProjects] = useState([])
   const [categories, setCategories] = useState([])
@@ -77,7 +83,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Projects">
+      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Products">
         <div style={{ textAlign: 'center', padding: '50px' }}>
           <p>Loading projects...</p>
         </div>
@@ -87,7 +93,7 @@ export default function Home() {
 
   return (
     <>
-      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Projects">
+      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Products">
         <div>
           {/* Category Navigation */}
           <section style={{ background: '#fff', padding: '40px 0 24px 0', marginBottom: 32 }}>
@@ -116,7 +122,7 @@ export default function Home() {
                       }}
                       aria-label={`Category: ${cat.title}`}
                     >
-                      {cat.title}
+                      {capitalizeFirstLetter(cat.title)}
                     </Link>
                   );
                 })}
@@ -143,7 +149,7 @@ export default function Home() {
                           height={300}
                         />
                         <div className="project-two__content">
-                          <p className="project-two__sub-title">{project.category?.title}</p>
+                          <p className="project-two__sub-title">{capitalizeFirstLetter(project.category?.title)}</p>
                           <h3 className="project-two__title">
                             <Link href={`/projects/${project.category?.slug?.current}/${project.slug?.current}`}>
                               {project.title}

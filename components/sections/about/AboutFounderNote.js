@@ -11,8 +11,8 @@ export default function AboutFounderNote() {
               <p className="about-founder-note__text mb-3">
                 Dear Valued Partners and Future Collaborators,<br /><br />
                 When we founded Door to Door, our goal was to transform how businesses approach sourcing and manufacturing in China. As someone who has tackled the complexities of global trade, I know firsthand the challenges you face.<br /><br />
-                Door to Door is not just another sourcing agent; we’re your competitive edge in a dynamic market. Our team’s expertise spans industries like chemicals, textiles, automotive, and more, ensuring we deliver excellence at every stage. We prioritize transparency, reliability, and innovation, eliminating intermediaries to provide you with the best value. Our “fail fast” approach empowers you to innovate with minimal risk.<br /><br />
-                Whether you’re a startup launching your first product or an established company optimizing your supply chain, Door to Door is here to guide you. We don&apos;t just deliver products – we deliver confidence and success.<br /><br />
+                Door to Door is not just another sourcing agent; we&apos;re your competitive edge in a dynamic market. Our team&apos;s expertise spans industries like chemicals, textiles, automotive, and more, ensuring we deliver excellence at every stage. We prioritize transparency, reliability, and innovation, eliminating intermediaries to provide you with the best value. Our comprehensive quality control and supplier vetting process ensures your success with minimal risk.<br /><br />
+                Whether you&apos;re a startup launching your first product or an established company optimizing your supply chain, Door to Door is here to guide you. We don&apos;t just deliver products – we deliver confidence and success.<br /><br />
                 Join us in redefining China sourcing. Let&apos;s turn your manufacturing challenges into opportunities for growth.
               </p>
               <div className="about-founder-note__signature mt-4">

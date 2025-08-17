@@ -4,6 +4,12 @@ import { useEffect, useState } from "react"
 import { createClient } from '@sanity/client'
 import Image from 'next/image'
 
+// Helper function to capitalize first letter
+const capitalizeFirstLetter = (string) => {
+  if (!string) return '';
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
 export default function Project() {
     const [categories, setCategories] = useState([])
 
@@ -40,7 +46,7 @@ export default function Project() {
                         <div className="project-two__content-box">
                         <div className="section-title text-left">
                             <div className="section-title__tagline-box">
-                            <span className="section-title__tagline">latest project</span>
+                            <span className="section-title__tagline">latest product</span>
                             </div>
                             <h2 className="section-title__title">
                              logistics for your Products
@@ -51,7 +57,7 @@ export default function Project() {
                             href="/projects"
                             className="thm-btn project-two__btn"
                             >
-                            more project
+                            more products
                             <span />
                             </Link>
                         </div>
@@ -94,10 +100,10 @@ export default function Project() {
                                             </div>
                                         )}
                                         <div className="project-two__content">
-                                            <p className="project-two__sub-title">Project Category</p>
+                                            <p className="project-two__sub-title">Product Category</p>
                                             <h3 className="project-two__title">
                                                 <Link href={`/projects/${cat.slug.current}`}>
-                                                    {cat.title}
+                                                    {capitalizeFirstLetter(cat.title)}
                                                 </Link>
                                             </h3>
                                         </div>

@@ -23,12 +23,22 @@ const projectsByCategoryQuery = `
   } | order(_createdAt desc)
 `
 
+// Helper function to capitalize first letter
+const capitalizeFirstLetter = (string) => {
+  if (!string) return '';
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
 export default async function CategoryProjectsPage({ params }) {
   const { category } = params
   const projects = await sanity.fetch(projectsByCategoryQuery, { category })
+  
+  // Get the category title from the first project or use the slug
+  const categoryTitle = projects.length > 0 ? projects[0].category?.title : category;
+  const capitalizedCategoryTitle = capitalizeFirstLetter(categoryTitle);
 
   return (
-    <Layout headerStyle={1} footerStyle={1} breadcrumbTitle={category}>
+    <Layout headerStyle={1} footerStyle={1} breadcrumbTitle={capitalizedCategoryTitle}>
       <div>
         <section className="project-one">
           <div className="container">
@@ -48,7 +58,7 @@ export default async function CategoryProjectsPage({ params }) {
                         height={300}
                       />
                       <div className="project-two__content">
-                        <p className="project-two__sub-title">{project.category?.title}</p>
+                        <p className="project-two__sub-title">{capitalizeFirstLetter(project.category?.title)}</p>
                         <h3 className="project-two__title">
                           <Link href={`/projects/${project.category?.slug?.current}/${project.slug?.current}`}>
                             {project.title}

@@ -3,6 +3,12 @@ import Link from "next/link"
 import { createClient } from '@sanity/client'
 import { useState, useEffect } from 'react'
 
+// Helper function to capitalize first letter
+const capitalizeFirstLetter = (string) => {
+  if (!string) return '';
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
 export default function Menu() {
     // Sanity client
     const sanity = createClient({
@@ -73,14 +79,14 @@ export default function Menu() {
                         <div className="dropdown-column">
                             {leftColumn.map(cat => (
                                 <div key={cat.slug.current} className="dropdown-item">
-                                    <Link href={`/projects/${cat.slug.current}`}>{cat.title}</Link>
+                                    <Link href={`/projects/${cat.slug.current}`}>{capitalizeFirstLetter(cat.title)}</Link>
                                 </div>
                             ))}
                         </div>
                         <div className="dropdown-column">
                             {rightColumn.map(cat => (
                                 <div key={cat.slug.current} className="dropdown-item">
-                                    <Link href={`/projects/${cat.slug.current}`}>{cat.title}</Link>
+                                    <Link href={`/projects/${cat.slug.current}`}>{capitalizeFirstLetter(cat.title)}</Link>
                                 </div>
                             ))}
                         </div>

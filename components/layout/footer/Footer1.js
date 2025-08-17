@@ -5,6 +5,12 @@ import Link from "next/link"
 import Image from 'next/image'
 import { createSanityDocument } from '../../../lib/sanity'
 
+// Helper function to capitalize first letter
+const capitalizeFirstLetter = (string) => {
+  if (!string) return '';
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
 export default function Footer1() {
     const [categories, setCategories] = useState([])
     useEffect(() => {
@@ -136,7 +142,7 @@ export default function Footer1() {
                     >
                     <div className="footer-widget__column footer-widget__services">
                         <div className="footer-widget__title-box">
-                        <h3 className="footer-widget__title">Projects</h3>
+                        <h3 className="footer-widget__title">Products</h3>
                         </div>
                         {categories.length > 0 ? (
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
@@ -148,7 +154,7 @@ export default function Footer1() {
                                                 <li key={cat.slug.current}>
                                                     <Link href={`/projects/${cat.slug.current}`}>
                                                         <span className="icon-angle-left" />
-                                                        {cat.title}
+                                                        {capitalizeFirstLetter(cat.title)}
                                                     </Link>
                                                 </li>
                                             ))}

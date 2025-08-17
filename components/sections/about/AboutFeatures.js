@@ -4,7 +4,7 @@ const features = [
   { title: 'Comprehensive Expertise', desc: 'From chemicals to electronics, our industry knowledge ensures we handle any challenge.', icon: 'icon-expertise' },
   { title: 'Direct Manufacturing Connections', desc: 'We eliminate middlemen, connecting you with vetted manufacturers for cost savings.', icon: 'icon-link' },
   { title: 'End-to-End Solutions', desc: 'From concept to delivery, we manage every aspect of your manufacturing journey.', icon: 'icon-end2end' },
-  { title: 'Innovation-Focused Approach', desc: 'Our “fail fast” philosophy supports rapid prototyping and iteration.', icon: 'icon-innovation' },
+  { title: 'Innovation-Focused Approach', desc: 'We support rapid prototyping and product development with flexible manufacturing solutions.', icon: 'icon-innovation' },
   { title: 'Transparency and Trust', desc: 'Clear communication and full visibility into costs and processes.', icon: 'icon-transparency' },
   { title: 'Quality Assurance', desc: 'Rigorous quality controls ensure products meet or exceed international standards.', icon: 'icon-quality' },
   { title: 'Global Reach, Local Expertise', desc: 'With a strong presence in China and a global client base, we bridge logistical and cultural gaps.', icon: 'icon-global' },

@@ -7,7 +7,7 @@ const steps = [
   { title: 'Quality-Price Balance', desc: 'We optimize costs while maintaining high-quality standards.', icon: 'icon-balance' },
   { title: 'Continuous Optimization', desc: 'We adapt to market trends and your evolving needs.', icon: 'icon-refresh' },
   { title: 'End-to-End Support', desc: 'From product development to final delivery, we manage every step.', icon: 'icon-support' },
-  { title: 'Risk Mitigation', desc: 'Our “fail fast” approach enables quick pivots, minimizing risks for innovative products.', icon: 'icon-shield' },
+  { title: 'Risk Mitigation', desc: 'Our comprehensive quality control and supplier vetting process minimizes risks and ensures successful project outcomes.', icon: 'icon-shield' },
 ];
 
 export default function AboutApproach() {

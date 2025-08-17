@@ -9,7 +9,7 @@ const Chatbot = () => {
     const [messages, setMessages] = useState([
         {
             type: 'bot',
-            content: 'Hello! I\'m your Door to Door assistant. I can help you with information about our services, projects, team, and any questions about our webapp. How can I assist you today?',
+            content: 'Hello! I\'m your Door to Door assistant. I can help you with information about our services, products, team, and any questions about our webapp. How can I assist you today?',
             timestamp: new Date().toLocaleTimeString()
         }
     ])
@@ -65,7 +65,7 @@ const Chatbot = () => {
     WEBAPP FEATURES:
     - Modern responsive design
     - Service portfolio showcase
-    - Project gallery
+    - Product gallery
     - Team member profiles
     - Client testimonials
     - Contact forms
@@ -83,7 +83,7 @@ const Chatbot = () => {
     - Sanity CMS for content management
     - Responsive design with modern UI
 
-    Please answer questions about Door to Door's services, team, projects, or any technical aspects of the webapp. Be helpful, professional, and informative. If asked about specific technical details or pricing, guide users to contact the team directly.
+    Please answer questions about Door to Door's services, team, products, or any technical aspects of the webapp. Be helpful, professional, and informative. If asked about specific technical details or pricing, guide users to contact the team directly.
     `
 
     const handleSendMessage = async () => {

@@ -28,7 +28,7 @@ export default function ProjectTwo() {
                             href="/projects"
                             className="thm-btn project-two__btn"
                             >
-                            more project
+                            more products
                             <span />
                             </Link>
                         </div>

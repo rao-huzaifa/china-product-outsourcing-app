@@ -6,11 +6,7 @@ export default function Brand() {
   {/*Brand One Start*/}
   <section className="brand-one">
     <div className="container">
-      <p className="brand-one__text count-box">
-        Join the{" "}
-        <CounterUp end={150} />
-        <span>+</span> companies trusting name
-      </p>
+      {/* Brand section content removed */}
     </div>
   </section>
   {/*Brand One End*/}
