@@ -95,7 +95,7 @@ function OurApproach() {
     },
     {
       title: 'Risk Mitigation',
-      desc: 'Our comprehensive quality control and supplier vetting process minimizes risks and ensures successful project outcomes.',
+      desc: 'Our "fail fast" approach enables quick pivots, minimizing risks for innovative products.',
       icon: 'fas fa-shield-alt',
       color: '#ef4444'
     },
@@ -124,7 +124,7 @@ function OurApproach() {
           maxWidth: '600px',
           margin: '0 auto',
           lineHeight: '1.6'
-        }}>Our proven process ensures successful outcomes for every product.</p>
+        }}>Our proven process ensures successful outcomes for every project.</p>
       </div>
 
       <div className="row g-4 justify-content-center">
@@ -257,7 +257,7 @@ function MissionCommitment() {
   };
   const commitment = {
     title: 'Our Commitment',
-    desc: 'At Door to Door, your success is our priority. We treat your products with the care and dedication we\'d give our own, understanding the vision and hard work behind every product. Your success defines ours, and we\'re committed to helping you achieve your manufacturing goals.',
+    desc: 'At Door to Door, your success is our priority. We treat your projects with the care and dedication we\'d give our own, understanding the vision and hard work behind every product. Your success defines ours, and we\'re committed to helping you achieve your manufacturing goals.',
     icon: 'icon-heart',
   };
   return (
@@ -305,7 +305,7 @@ function Features() {
     },
     { 
       title: 'Innovation-Focused Approach', 
-      desc: 'We support rapid prototyping and product development with flexible manufacturing solutions.',
+      desc: 'Our "fail fast" philosophy supports rapid prototyping and iteration.',
       icon: 'fas fa-lightbulb',
       color: '#0d6efd'
     },

@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { createClient } from '@sanity/client'
+import { sanityClient } from '../../../lib/sanity'
 import Image from 'next/image'
 
 // Helper function to capitalize first letter
@@ -14,15 +14,9 @@ export default function Project() {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        const sanity = createClient({
-            projectId: 'hjoc1p23',
-            dataset: 'production',
-            apiVersion: '2024-07-08',
-            useCdn: true,
-        })
         const fetchCategories = async () => {
             try {
-                const result = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug, image{asset->{url}} }`)
+                const result = await sanityClient.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug, image{asset->{url}} }`)
                 setCategories(result)
             } catch (error) {
                 setCategories([])

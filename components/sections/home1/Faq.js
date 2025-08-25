@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { useState, useEffect } from 'react'
 import { createSanityDocument } from '../../../lib/sanity'
-import { createClient } from '@sanity/client'
+import { sanityClient } from '../../../lib/sanity'
 
 export default function Faq() {
     const [isActive, setIsActive] = useState({
@@ -13,15 +13,9 @@ export default function Faq() {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        const sanity = createClient({
-            projectId: 'hjoc1p23',
-            dataset: 'production',
-            apiVersion: '2024-07-08',
-            useCdn: true,
-        })
         const fetchCategories = async () => {
             try {
-                const result = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
+                const result = await sanityClient.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
                 setCategories(result)
             } catch (error) {
                 console.error('Error fetching categories:', error)

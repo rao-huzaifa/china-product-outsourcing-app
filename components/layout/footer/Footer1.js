@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { createClient } from '@sanity/client'
+import { sanityClient } from '../../../lib/sanity'
 import Link from "next/link"
 import Image from 'next/image'
 import { createSanityDocument } from '../../../lib/sanity'
@@ -14,13 +14,7 @@ const capitalizeFirstLetter = (string) => {
 export default function Footer1() {
     const [categories, setCategories] = useState([])
     useEffect(() => {
-        const sanity = createClient({
-            projectId: 'hjoc1p23',
-            dataset: 'production',
-            apiVersion: '2024-07-08',
-            useCdn: true,
-        })
-        sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`).then(setCategories)
+        sanityClient.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`).then(setCategories)
     }, [])
 
     const [form, setForm] = useState({ email: '' })

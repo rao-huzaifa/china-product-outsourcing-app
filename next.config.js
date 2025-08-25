@@ -11,4 +11,14 @@ module.exports = {
       },
     ],
   },
+  
+  // Add rewrites for subdomain routing
+  async rewrites() {
+    return [
+      {
+        source: '/studio/:path*',
+        destination: '/studio/[[...tool]]/:path*',
+      },
+    ]
+  },
 }

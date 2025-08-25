@@ -10,6 +10,9 @@ export default defineConfig({
   projectId: 'hjoc1p23',
   dataset: 'production',
 
+  // Add basePath for custom subdomain
+  basePath: '/studio',
+
   plugins: [structureTool(), visionTool()],
 
   schema: {

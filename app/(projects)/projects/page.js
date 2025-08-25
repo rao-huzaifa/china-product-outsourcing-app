@@ -2,17 +2,10 @@
 
 import Layout from "../../../components/layout/Layout"
 import Link from "next/link"
-import { createClient } from '@sanity/client'
+import { sanityClient } from '../../../lib/sanity'
 import './category-nav.css'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-
-const sanity = createClient({
-  projectId: 'hjoc1p23',
-  dataset: 'production',
-  apiVersion: '2024-07-08',
-  useCdn: true,
-})
 
 const projectsQuery = `
   *[_type == "project"]{
@@ -50,8 +43,8 @@ export default function Home() {
     const fetchData = async () => {
       try {
         const [projectsData, categoriesData] = await Promise.all([
-          sanity.fetch(projectsQuery),
-          sanity.fetch(categoriesQuery)
+          sanityClient.fetch(projectsQuery),
+          sanityClient.fetch(categoriesQuery)
         ])
         setProjects(projectsData)
         setCategories(categoriesData)

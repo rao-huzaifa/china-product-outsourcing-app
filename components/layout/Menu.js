@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link"
-import { createClient } from '@sanity/client'
+import { sanityClient } from '../../lib/sanity'
 import { useState, useEffect } from 'react'
 
 // Helper function to capitalize first letter
@@ -10,27 +10,20 @@ const capitalizeFirstLetter = (string) => {
 }
 
 export default function Menu() {
-    // Sanity client
-    const sanity = createClient({
-        projectId: 'hjoc1p23',
-        dataset: 'production',
-        apiVersion: '2024-07-08',
-        useCdn: true,
-    })
     // Fetch categories
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const result = await sanity.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
+                const result = await sanityClient.fetch(`*[_type == "projectCategory"] | order(title asc){ title, slug }`)
                 setCategories(result)
             } catch (error) {
                 console.error('Error fetching categories:', error)
             }
         }
         fetchCategories()
-    }, [sanity])
+    }, [])
 
     // Split categories into two columns
     const midPoint = Math.ceil(categories.length / 2)
@@ -43,14 +36,14 @@ export default function Menu() {
     useEffect(() => {
         const fetchBlogCategories = async () => {
             try {
-                const result = await sanity.fetch(`*[_type == "blogCategory"] | order(title asc){ title, slug }`)
+                const result = await sanityClient.fetch(`*[_type == "blogCategory"] | order(title asc){ title, slug }`)
                 setBlogCategories(result)
             } catch (error) {
                 console.error('Error fetching blog categories:', error)
             }
         }
         fetchBlogCategories()
-    }, [sanity])
+    }, [])
 
     // Split blog categories into two columns
     const blogMidPoint = Math.ceil(blogCategories.length / 2)
@@ -68,6 +61,38 @@ export default function Menu() {
             </li>
             <li>
                 <Link href="/calculator">Calculator</Link>
+            </li>
+            <li className="dropdown">
+                <Link href="/services/tour">Our Services</Link>
+                <ul className="projects-dropdown">
+                    <li className="dropdown-header">
+                        <Link href="/services/tour">All Our Services</Link>
+                    </li>
+                    <li className="dropdown-columns">
+                        <div className="dropdown-column">
+                            <div className="dropdown-item">
+                                <Link href="/services/tour">Guangzhou Market Tours</Link>
+                            </div>
+                            {/* <div className="dropdown-item">
+                                <Link href="/express-freight-solutions">Express Freight Solutions</Link>
+                            </div>
+                            <div className="dropdown-item">
+                                <Link href="/quick-move-logistics">Quick Move Logistics</Link>
+                            </div> */}
+                        </div>
+                        <div className="dropdown-column">
+                            {/* <div className="dropdown-item">
+                                <Link href="/speedy-dispatch">Speedy Dispatch</Link>
+                            </div>
+                            <div className="dropdown-item">
+                                <Link href="/swift-supply-chain">Swift Supply Chain</Link>
+                            </div>
+                            <div className="dropdown-item">
+                                <Link href="/on-point-distribution">On Point Distribution</Link>
+                            </div> */}
+                        </div>
+                    </li>
+                </ul>
             </li>
             <li className="dropdown">
                 <Link href="/projects">Products</Link>
